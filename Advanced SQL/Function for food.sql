@@ -45,3 +45,4 @@ select * from PriceChange1('2023-10-11',92,1)
 select * from FOOD
 
 
+select * from food where id =1
