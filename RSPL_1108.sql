@@ -932,6 +932,4 @@ H_Films  )
 
 use rise
 
-select name
-from sys.tables
 
