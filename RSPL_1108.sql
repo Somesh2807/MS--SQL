@@ -923,8 +923,7 @@ select b.Film_Name as Bollywood_Name,h.Film_Name as Hollywod_Name,b.Length as Mo
 from B_Films B
 join H_Films H on b.Length = h.Length
 
-select Film_Name as Bollywood_Name from B_Films where length = (select Film_Name as H.Film_Name from 
-H_Films  )
+
 
 
 -- Written a query for a particular customer who booked ticket on particular date.
