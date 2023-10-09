@@ -929,3 +929,5 @@ use rise
 
 select b.Film_Name as Bollywood_Name,h.Film_Name as Hollywod_Name,b.Length as Movie_Length
 from B_Films B
+join H_Films H on b.Length = h.Length
+
