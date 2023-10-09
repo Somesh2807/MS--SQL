@@ -1,7 +1,8 @@
+---This is edited by vishal
+
 create database windows_function
 
 use windows_function
-
 
 --- Windows Function
 
