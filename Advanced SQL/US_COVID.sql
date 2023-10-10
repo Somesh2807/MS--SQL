@@ -84,10 +84,29 @@ CREATE TABLE time_series_19_covid_combined (
 	"Deaths" DECIMAL(38, 0)  
 );
 
+CREATE TABLE us_deaths
+(
+	"UID" DECIMAL(38, 0)  , 
+	iso2 VARCHAR(2)  , 
+	iso3 VARCHAR(3)  , 
+	code3 DECIMAL(38, 0)  , 
+	"FIPS" DECIMAL(38, 0), 
+	"Admin2" VARCHAR(41), 
+	"Lat" DECIMAL(38, 15)  , 
+	"Combined_Key" VARCHAR(55)  , 
+	"Population" DECIMAL(38, 0)  , 
+	"Date" DATE  , 
+	"Case" DECIMAL(38, 0)  , 
+	"Long" DECIMAL(38, 14)  , 
+	"Country/Region" VARCHAR(2)  , 
+	"Province/State" VARCHAR(24)  
+);
 
 
 
-BULK INSERT time_series_19_covid_combined FROM "G:\US COVID\time-series-19-covid-combined_csv.csv" WITH 
+
+
+BULK INSERT us_deaths FROM "G:\US COVID\us_deaths_csv.csv" WITH 
 (format='CSV',  FIELDTERMINATOR = ',', ROWTERMINATOR = '\n',  FIRSTROW = 2)
 
 csvsql __dialect mysql __snifflimit 999999999 us_confirmed_csv.csv>us_confirmed.sql
@@ -96,6 +115,19 @@ csvsql __dialect mysql __snifflimit 999999999 us_confirmed_csv.csv>us_confirmed.
 INSERT INTO US_COVID.dbo.reference
 SELECT * FROM master.dbo.reference
 
+select name
+from sys.tables
+select * from	us_simplified
+select * from	worldwide_aggregate
+select * from	key_countries_pivoted
+select * from	time_series_19_covid_combined
+select * from	us_deaths
+select * from	us_confirmed
+select * from	countries_aggregated
+select * from	reference
 
+select sum([Case]) over (partition by [Country/Region]) as case1,
+Row_Number() over (order by [Country/Region] ) as row_num1
+from us_deaths
 
-
+select * from us_deaths
