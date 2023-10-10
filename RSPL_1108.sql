@@ -931,3 +931,16 @@ select b.Film_Name as Bollywood_Name,h.Film_Name as Hollywod_Name,b.Length as Mo
 from B_Films B
 join H_Films H on b.Length = h.Length
 
+select name
+from sys.tables
+
+select * from employee
+select * from dept_name
+select * from account
+select * from EMPLOYEE_DETAILS
+select * from PROJECT_DETAIL
+select * from BoardingPass
+select * from TicketNo
+select * from Seats
+select * from Transcation
+select * from UserData
