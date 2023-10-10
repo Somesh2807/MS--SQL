@@ -4,6 +4,8 @@ create database PANTRY
 --- ENter in the databse
 USE PANTRY
 
+
+
 --create table
 
 create table FOOD(
