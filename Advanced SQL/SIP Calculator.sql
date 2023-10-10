@@ -8,9 +8,11 @@ USE SIP_DEMO
 CREATE TABLE UserData
 (
 ID INT PRIMARY KEY IDENTITY(1,1),
-Name VARCHAR(10),
+Name VARCHAR(50),
 PhoneNumber VARCHAR(10), 
 )
+
+
 ----- Store Procedure For storing Customer data
 
 CREATE PROCEDURE sp_InsertUserData
@@ -76,7 +78,7 @@ BEGIN
 END;
 ------------ Execute OF SP of SIP CALCULATOR AND NESTED SP OF CUSTOMER DETAILS
 EXEC CalculateSIP
-    @Name = 'Somesh Jatav',
+    @Name = 'Vishal Parmar',
     @PhoneNumber = '8200857566',
     @MonthlyInvestment = 1000,
     @AnnualInterestRate = 10,
