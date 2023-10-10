@@ -943,4 +943,3 @@ select * from BoardingPass
 select * from TicketNo
 select * from Seats
 select * from Transcation
-select * from UserData
