@@ -29,11 +29,10 @@ EXEC sp_InsertUserData
     @PhoneNumber = '8200857566';
 
 ------------------ Create of SP of SIP Calculator
-create PROCEDURE CalculateSIP
+create or alter PROCEDURE CalculateSIP
 (
     @Name VARCHAR(10),
     @PhoneNumber VARCHAR(10),
-    @PrincipalAmount DECIMAL(18, 2),
     @MonthlyInvestment DECIMAL(18, 2),
     @AnnualInterestRate DECIMAL(5, 2),
     @NumberOfMonths INT
@@ -43,6 +42,8 @@ BEGIN
 
     EXEC sp_InsertUserData @Name, @PhoneNumber;------ Run OF SP of Customer details to store it.
 
+    DECLARE   @PrincipalAmount DECIMAL(18, 2)
+    SET @PrincipalAmount=@MonthlyInvestment * @NumberOfMonths
 
     DECLARE @FutureValue DECIMAL(18, 2)
     SET @FutureValue = @PrincipalAmount
@@ -77,10 +78,9 @@ END
 EXEC CalculateSIP
     @Name = 'Somesh Jatav',
     @PhoneNumber = '8200857566',
-    @PrincipalAmount = 12000,
     @MonthlyInvestment = 1000,
     @AnnualInterestRate = 10,
-    @NumberOfMonths = 12
+    @NumberOfMonths = 14
 
 ---- VIEW DATA OF CUSTOMER FROM CUSTOMER  TABLE
 SELECT * FROM UserData
