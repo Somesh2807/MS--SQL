@@ -86,4 +86,4 @@ EXEC CalculateSIP
 
 ---- VIEW DATA OF CUSTOMER FROM CUSTOMER  TABLE
 SELECT * FROM UserData
-SELECT * FROM UserData
+SELECT * FROM UserData              
