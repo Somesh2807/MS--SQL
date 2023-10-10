@@ -43,6 +43,7 @@ BEGIN
 END
 
 select * from sales.SalesOrderHeader
+
 -----------SUB QUERY TO find minimum of product price.
 SELECT ProductID,Name, ListPrice,*
 FROM Production.Product WHERE ListPrice = (SELECT MIN(ListPrice)FROM Production.Product);
