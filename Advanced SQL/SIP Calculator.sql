@@ -73,7 +73,7 @@ BEGIN
 			PRINT CONCAT('Tenure:', @NumberOfMonths)
 			PRINT CONCAT('Future Value:', @FutureValue )
 
-END
+END;
 ------------ Execute OF SP of SIP CALCULATOR AND NESTED SP OF CUSTOMER DETAILS
 EXEC CalculateSIP
     @Name = 'Somesh Jatav',
