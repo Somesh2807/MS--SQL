@@ -18,5 +18,3 @@ count(Gender) over (partition  by Gender order by Gender asc)  as Gender_total
 from rise.dbo.employee
 
 
-Hi Pradeep , How are You ?
-
