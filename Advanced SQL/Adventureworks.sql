@@ -84,3 +84,6 @@ EXEC InsertAddress @AddressLine1 = '123 Main St', @City = 'New York', @StateProv
 -- Example for executing the UpdateCreditCardLimit procedure
 EXEC UpdateCreditCardLimit @CreditCardID = 101, @NewLimit = 5000.00;
 
+
+
+select * from Sales.SalesTerritory
