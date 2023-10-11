@@ -131,3 +131,28 @@ Row_Number() over (order by [Country/Region] ) as row_num1
 from us_deaths
 
 select * from us_deaths
+
+alter table us_confirmed add  [UID_New] NVARCHAR(50)
+
+update us_confirmed set UID_New =CONCAT(Date , FIPS)
+-- Calculate the count of records where FIPS is not null
+
+
+
+-- Calculate the total count of records in the reference table
+
+
+DECLARE @total INT
+set @total= (SELECT COUNT(*) as Count_total
+FROM reference)
+
+DECLARE @Value INT
+SET @Value=
+(SELECT COUNT(FIPS) AS FIPS
+FROM reference
+WHERE FIPS IS NOT NULL)
+
+select @total-@Value as Value
+
+
+
