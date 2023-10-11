@@ -126,8 +126,8 @@ select * from employees where day(hire_date)>15
      
       
 
---Q7. Write a stored procedure to get the names (first name, last name), salary, 
---PF of all the employees (PF is calculated as 15% of the salary).
+/*Q7. Write a stored procedure to get the names (first name, last name), salary, 
+PF of all the employees (PF is calculated as 15% of the salary).
    
  
 
@@ -146,7 +146,7 @@ EXECUTE  PF
 ---Q8. Write a query to fetch details of all employees
 -------excluding the employees hired between the year 1998 to 2000.
   select * from employees
-  where hire_date between '1998-01-01' and '2000-01-01'
+  where hire_date  between '1998-01-01' and '2000-12-31'
 
 
 ---Q9. Using subquery find the name (first_name, last_name) 
@@ -157,6 +157,6 @@ EXECUTE  PF
 
 --Q10. Write a query to retrieve the last 3 records from the Employee table.
 
-select top 3 * from employees order by  employee_id desc
+select top 3 * from employees order by  employee_id 
 
 
