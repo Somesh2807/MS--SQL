@@ -129,10 +129,7 @@ select * from employees where day(hire_date)>15
 /*Q7. Write a stored procedure to get the names (first name, last name), salary, 
 PF of all the employees (PF is calculated as 15% of the salary).
    
- 
-
-create  or alter procedure PF
-  
+ create  or alter procedure PF
 as 
 begin
      select first_name,last_name, salary, (salary*15/100) as PF, (salary+PF) as Total_salary
@@ -146,7 +143,7 @@ EXECUTE  PF
 ---Q8. Write a query to fetch details of all employees
 -------excluding the employees hired between the year 1998 to 2000.
   select * from employees
-  where hire_date  between '1998-01-01' and '2000-12-31'
+  where hire_date  not between '1998-01-01' and '2000-12-31'
 
 
 ---Q9. Using subquery find the name (first_name, last_name) 
