@@ -81,10 +81,8 @@ INSERT INTO employees VALUES (129, 'Laura' , 'Bissot' , 'LBISSOT' , '650.124.523
 INSERT INTO employees VALUES (130, 'Mozhe' , 'Atkinson' , 'MATKINSO' , '650.124.6234' , '1997-10-12' , 'ST_CLERK' , 2800 , NULL , 121 , 110);
 
 --Q1. Find the employees who joined the company after 15th of the month.
+
 select * from employees where day(hire_date)>15
-
-
-
 
 --Q2. Write an SQL query to display employees who earn more than the average salary in that company. 
      
@@ -96,12 +94,12 @@ select * from employees where day(hire_date)>15
      select e.employee_id,e.first_name,e.manager_id,e.salary
      from employees E  join employees F 
      on E.employee_id=F.employee_id
-     
+     where E.manager_id is not null
 
 
 --Q4. Display the managers and the reporting employees who work in different departments. 
      select E.manager_id,E.employee_id,E.first_name,D.department_name
-     from employees E  Right Join  departments D 
+     from employees E  inner Join  departments D 
      on E.department_id=D.department_id
      
           
@@ -126,19 +124,19 @@ select * from employees where day(hire_date)>15
      
       
 
-/*Q7. Write a stored procedure to get the names (first name, last name), salary, 
-PF of all the employees (PF is calculated as 15% of the salary).
+--Q7. Write a stored procedure to get the names (first name, last name), salary, 
+--PF of all the employees (PF is calculated as 15% of the salary)
    
- create  or alter procedure PF
-as 
-begin
-     select first_name,last_name, salary, (salary*15/100) as PF, (salary+PF) as Total_salary
-  from employees
+ CREATE OR ALTER PROCEDURE PF
+AS 
+BEGIN
+select employee_id,first_name,salary,(salary*0.15) as PF,
+(salary+(salary*0.15)) as Total_Salary from employees 
 END
+exec PF
 
---- To execute Command SP
-EXECUTE  PF
-------------------------------------------------------
+
+----------------
 
 ---Q8. Write a query to fetch details of all employees
 -------excluding the employees hired between the year 1998 to 2000.
@@ -154,6 +152,6 @@ EXECUTE  PF
 
 --Q10. Write a query to retrieve the last 3 records from the Employee table.
 
-select top 3 * from employees order by  employee_id 
+select top 3 * from employees order by employee_id desc
 
 
