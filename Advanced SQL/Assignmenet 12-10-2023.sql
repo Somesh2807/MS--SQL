@@ -161,13 +161,15 @@ select top 3 * from employees order by employee_id desc
 
 --Q1) find all departments located at the location whose id is 1700
 
-select * from departments where location_id = 1700
+select * from employees where department_id in
+(select  department_id from departments where location_id = 1700)
 
 --Q2)find all employees that belong to the location 1700 by using the department id list of the first query
 
 select * from employees where department_id  in ( select department_id from departments where location_id = 1700)
 
 --Q3) find employees who locate in a different location.
+
 
 
    
@@ -208,22 +210,24 @@ from departments d
 inner join (
     select department_id, count(employee_id) as employee_count
     from employees
-    where salary > 10000
-    group by department_id
-) query on d.department_id = query.department_id
-
---Q9) finds all departments that do not have any employee with the salary greater than 10,000
-
-select d.department_id, d.department_name, employee_count
-from departments d
-inner join (
-    select department_id, count(employee_id) as employee_count
-    from employees
     where salary < 10000
     group by department_id
 ) query on d.department_id = query.department_id
 
+--Q9) find the lowest salary by department
+
+select distinct(E.department_id),Min_Salary,Department_wise_employee_count
+from employees E
+inner join 
+(select department_id,min(salary)  as Min_Salary, count(employee_id) as Department_wise_employee_count
+from employees G group by department_id) query
+on E.department_id=query.department_id
+
+
+
 --Q10) finds all employees whose salaries are greater than the lowest salary of every department
+
+
 
 
 
