@@ -168,21 +168,9 @@ select * from employees where department_id in
 
 select * from employees where department_id  in ( select department_id from departments where location_id = 1700)
 
---Q3) find employees who locate in a different location.
-
-
-
-   
 
 --Q4)find all employees who do not locate at the location 1700 using not in operator.
 select * from employees where department_id not  in ( select department_id from departments where location_id = 1700)
-
---Q5)finds the employees who have the (n-1)th highest salary
-  select * from employees
-  order by salary 
-  offset 1 rows fetch next 1 rows only
-
-  select ROW_Number() over (order by salary)as order_n from employees
 
 
 --Q6)finds all employees who salaries are greater than the average salary of all employees.
@@ -224,13 +212,6 @@ from employees G group by department_id) query
 on E.department_id=query.department_id
 
 
-
---Q10) finds all employees whose salaries are greater than the lowest salary of every department
-
-
-
-
-
 --Q11)  calculate the average of average salary of departments
    select e.department_id,avg_salary
    from employees e
@@ -244,3 +225,11 @@ from employees e
 inner join (select employee_id,salary,(lead(salary) over (order by salary)- salary) as Difference_Salary, avg(salary) over (order by salary) as AVG_Salary
 from employees) query
 on e.employee_id=query.employee_id
+
+
+
+--Help us to solve below questions---
+
+--Q5)finds the employees who have the (n-1)th highest salary
+--Q3) find employees who locate in a different location.  
+--Q10) finds all employees whose salaries are greater than the lowest salary of every department
