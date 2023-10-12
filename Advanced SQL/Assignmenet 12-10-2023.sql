@@ -230,9 +230,7 @@ on e.employee_id=query.employee_id
 
 --Help us to solve below questions---
 
---Q5)finds the employees who have the (n-1)th highest salary\
-
-select row_number() over (order by salary) as number from employees
+--Q5)finds the employees who have the (n-1)th highest salary
 
 --Q3) find employees who locate in a different location.  
 
