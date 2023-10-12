@@ -220,7 +220,7 @@ on E.department_id=query.department_id
 
 --Q12) finds the salaries of all employees, their average salary, 
 ---and the difference between the salary of each employee and the average salary
-select e.employee_id,e.salary,Difference_Salary,AVG_Salary
+select e.employee_id,e.salary,Difference_Salary,AVG_Salary 
 from employees e
 inner join (select employee_id,salary,(lead(salary) over (order by salary)- salary) as Difference_Salary, avg(salary) over (order by salary) as AVG_Salary
 from employees) query
@@ -230,6 +230,10 @@ on e.employee_id=query.employee_id
 
 --Help us to solve below questions---
 
---Q5)finds the employees who have the (n-1)th highest salary
+--Q5)finds the employees who have the (n-1)th highest salary\
+
+select row_number() over (order by salary) as number from employees
+
 --Q3) find employees who locate in a different location.  
+
 --Q10) finds all employees whose salaries are greater than the lowest salary of every department
