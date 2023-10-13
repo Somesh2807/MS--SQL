@@ -42,7 +42,7 @@ WHERE  @priceChangeDate BETWEEN START_DATE AND END_DATE
 
 --To run function parameters [@price_change_date], [@old_Price] , [@New_Price per day]
 
-select * from PriceChange1('2023-10-11',92,1)
+select * from PriceChange1('2023-10-11',92,200)
 
 select * from FOOD
 

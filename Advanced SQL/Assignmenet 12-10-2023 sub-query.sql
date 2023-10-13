@@ -168,9 +168,25 @@ select * from employees where department_id in
 
 select * from employees where department_id  in ( select department_id from departments where location_id = 1700)
 
+--Q3) count find employees who locate in a different location.  
+select query.department_id,query.location_id,count(E.employee_id) Employee_Count
+from employees E
+inner join (select location_id,department_id from departments) query
+on e.department_id=query.department_id
+group by query.department_id,query.location_id
+
+
 
 --Q4)find all employees who do not locate at the location 1700 using not in operator.
 select * from employees where department_id not  in ( select department_id from departments where location_id = 1700)
+
+--Q5)finds the employees who have the (n-1)th highest salary
+
+select * from employees
+where salary = ( select distinct salary from 
+( select salary, row_number() over (order by  salary asc) as row_num from employees) ranked_employees
+ where row_num = (select count(*) - 1 from employees))
+   
 
 
 --Q6)finds all employees who salaries are greater than the average salary of all employees.
@@ -228,10 +244,15 @@ on e.employee_id=query.employee_id
 
 
 
---Help us to solve below questions---
 
---Q5)finds the employees who have the (n-1)th highest salary
 
---Q3) find employees who locate in a different location.  
+
+
 
 --Q10) finds all employees whose salaries are greater than the lowest salary of every department
+
+
+
+
+select * from employees
+select * from departments

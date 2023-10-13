@@ -11,7 +11,7 @@ Azure_Marks INT,
 Excel_Marks INT
 )
 
-ALTER PROC Cursor1
+ALTER PROC Cursor1 ---- STARTING of cursor
 AS
 BEGIN
 
@@ -21,11 +21,11 @@ DECLARE @StudentName NVARCHAR(30)
 DECLARE @TotalMarks INT
 DECLARE @Grade NVARCHAR(2)
 
-DECLARE StudentCursor CURSOR FOR
+DECLARE StudentCursor CURSOR FOR---DECLARE OF CURSOR
 SELECT Student_ID, Student_Name, SQL_Marks + Python_Marks + Azure_Marks + Excel_Marks AS TotalMarks
 FROM student
 
-OPEN StudentCursor
+OPEN StudentCursor---OPENING OF CURSOR
 
 FETCH NEXT FROM StudentCursor INTO @StudentID, @StudentName, @TotalMarks
 
