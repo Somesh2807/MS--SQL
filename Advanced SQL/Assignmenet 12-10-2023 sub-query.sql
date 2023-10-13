@@ -174,6 +174,7 @@ from employees E
 inner join (select location_id,department_id from departments) query
 on e.department_id=query.department_id
 group by query.department_id,query.location_id
+order by location_id asc
 
 
 
@@ -186,6 +187,7 @@ select * from employees
 where salary = ( select distinct salary from 
 ( select salary, row_number() over (order by  salary asc) as row_num from employees) ranked_employees
  where row_num = (select count(*) - 1 from employees))
+   
    
 
 
