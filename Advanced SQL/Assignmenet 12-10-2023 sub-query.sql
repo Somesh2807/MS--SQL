@@ -243,16 +243,12 @@ from employees) query
 on e.employee_id=query.employee_id
 
 
-
-
-
-
-
-
 --Q10) finds all employees whose salaries are greater than the lowest salary of every department
 
+SELECT E.first_name,e.last_name, E.Salary,E.department_id FROM employees E WHERE E.Salary > ALL ( SELECT MIN(Salary)
+    FROM employees
+    WHERE department_id = E.department_id
+)
+order by E.department_id desc
 
 
-
-select * from employees
-select * from departments
