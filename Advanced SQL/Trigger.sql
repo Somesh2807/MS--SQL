@@ -182,4 +182,7 @@ EXEC RecordTransaction
 
 	select * from Account
 
-	select * from [Transaction]
+-----------------------------------------------------------------------------------------------------------
+
+
+

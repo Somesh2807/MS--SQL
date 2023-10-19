@@ -184,9 +184,8 @@ select * from employees where department_id not  in ( select department_id from 
 --Q5)finds the employees who have the (n-1)th highest salary
 
 select * from employees
-where salary = ( select distinct salary from 
-( select salary, row_number() over (order by  salary asc) as row_num from employees) ranked_employees
- where row_num = (select count(*) - 1 from employees))
+where salary = ( select distinct salary from ( select salary, row_number() over (order by  salary asc) as row_num from employees) ranked_employees
+ where row_num = (select count(*) - 3 from employees))
    
    
 
