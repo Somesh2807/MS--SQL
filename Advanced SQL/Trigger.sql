@@ -185,4 +185,116 @@ EXEC RecordTransaction
 -----------------------------------------------------------------------------------------------------------
 
 
+CREATE TABLE [dbo].[size] (
+    [s_id]      INT          IDENTITY (101, 1) NOT NULL,
+    [s_name]    VARCHAR (15) NULL,
+    [S_Price++] MONEY        NULL,
+    PRIMARY KEY CLUSTERED ([s_id] ASC)
+);
+
+
+CREATE TABLE [dbo].[product] (
+    [p_id]           INT          IDENTITY (1, 1) NOT NULL,
+    [p_name]         VARCHAR (15) NULL,
+    [category]       VARCHAR (20) NULL,
+    [Price_per_unit] MONEY        NULL,
+    PRIMARY KEY CLUSTERED ([p_id] ASC)
+);
+
+
+CREATE TABLE [dbo].[customer] (
+    [c_id]       INT          IDENTITY (5001, 1) NOT NULL,
+    [c_name]     VARCHAR (20) NULL,
+    [contact_no] BIGINT       NULL,
+    [address]    VARCHAR (50) NULL,
+    [email]      VARCHAR (50) NULL,
+    PRIMARY KEY CLUSTERED ([c_id] ASC),
+    CONSTRAINT [ck_len] CHECK (len([contact_no])=(10))
+);
+
+CREATE TABLE [dbo].[order_tbl] (
+    [o_id]          INT          IDENTITY (501, 1) NOT NULL,
+    [customer_id]   INT          NULL,
+    [product_id]    INT          NULL,
+    [Size_ID]       INT          NULL,
+    [day_date]      VARCHAR (50) NULL,
+    [mode_of_order] VARCHAR (10) NULL,
+    [quantity]      INT          NULL,
+    [total_price]   DECIMAL (18) NULL,
+    PRIMARY KEY CLUSTERED ([o_id] ASC),
+    FOREIGN KEY ([customer_id]) REFERENCES [dbo].[customer] ([c_id]),
+    FOREIGN KEY ([product_id]) REFERENCES [dbo].[product] ([p_id]),
+    CONSTRAINT [ck_mdoe] CHECK ([mode_of_order]='Online' OR [mode_of_order]='offline')
+);
+
+
+insert into size values('Regular',0),
+('Medium',70),
+('Large',150),
+('Extra Large',220),
+('Giant',300)
+
+insert into product values('Veg','Pizza',200),
+('New_Farm','Pizza'400),
+('Tan','Pizza'350),
+('Paneer','Pizza',400
+
+select * from size
+select * from product
+select * from customer
+select * from order_tbl
+
+
+create proc sp_addcustomer
+(@c_name Nvarchar(50),@Contact_no BIGINT,@Address NVARCHAR(150),@Email_ID NVarchar(100))
+as 
+begin
+insert into customer (c_name,contact_no,address,email) values (@c_name,@Contact_no,@Address,@Email_ID)
+end
+
+
+ -- Create a trigger for the 'order_tbl' table
+CREATE TRIGGER ApplyPizzaDiscountAndCalculateGST
+ON [dbo].[order_tbl]
+AFTER INSERT
+AS
+BEGIN
+    SET NOCOUNT ON;
+
+    -- Calculate the total price and apply the discount and GST for eligible pizza orders
+    UPDATE o
+    SET o.total_price = CASE
+            WHEN p.[category] = 'Pizza' 
+                AND (DATEPART(WEEKDAY, CAST(o.day_date AS DATE)) IN (3, 6)) -- Tuesday (3) and Friday (6)
+                AND (o.quantity > 2 OR (o.quantity * p.[Price_per_unit] > 500))
+                THEN (o.quantity * p.[Price_per_unit]) * 0.5 * 1.18 -- 50% discount and 18% GST
+            ELSE o.quantity * p.[Price_per_unit] * 1.18 -- No discount, just 18% GST
+        END
+    FROM [dbo].[order_tbl] AS o
+    JOIN [dbo].[product] AS p ON o.product_id = p.p_id
+    WHERE o.o_id IN (SELECT DISTINCT i.o_id FROM INSERTED i);
+
+END;
+
+
+
+------TO INSERT DATA IN Customer detail
+
+exec sp_addcustomer  @c_name ='Somesh Jatav  ' ,@Contact_no = 8200857566,
+@Address = 'The rise',@Email_ID = 'somesh8200@outlook.com'
+
+---------------------------------------------
+
+
+CREATE TRIGGER ApplyPizzaDiscountAndCalculateGST
+ON [dbo].[order_tbl]
+AFTER INSERT
+AS
+BEGIN
+    SET NOCOUNT ON;
+
+
+
+
+
 

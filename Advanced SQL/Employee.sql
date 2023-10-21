@@ -72,7 +72,7 @@ INSERT INTO Dep_Table VALUES
 
 -- STORE PROCEDURE FOR NEW ONBOARD RESOURCES
 
-CREATE PROCEDURE Insert_Details
+CREATE or  PROCEDURE Insert_Details
 (
     @Emp_ID INT,
     @Name NVARCHAR(50),
@@ -185,7 +185,7 @@ SELECT @Date_Of_Exit = Date_Of_Exit FROM inserted WHERE Status = 'A'
 SET @CurrentDate = GETDATE()
 
 -- Check if 'Date_Of_Exit' matches the current date
-IF @Date_Of_Exit = @CurrentDate
+IF @Date_Of_Exit >= @CurrentDate
 BEGIN
 
 -- Update the 'Status' to 'I' (Inactive)
@@ -201,12 +201,24 @@ END
 END
 
 
+select name
+from sys.tables
+
+select * from Emp_Detail
+select * from Emp_History
+select * from Emp_Exit_Table
+
+
+
+
 --- TO ONBOARD NEW EMPLOYEE
 
-exec Insert_Details @Emp_ID=1,@Name='Pradeep Rana',@Department_ID = 3, @Status = 'A',@Date_OF_Joining = '2023-01-01'
+exec Insert_Details @Emp_ID=6,@Name='Pravin Dubey',@Department_ID = 2, @Status = 'A',@Date_OF_Joining = '2023-01-01'
 
 --- TO MARK EXIT AND UPDATE RESGINATION DATE
-exec EXIT_Detail  @Emp_ID = 1, @Status ='A', @Date_Of_Resignation = '2023-06-30'
+exec EXIT_Detail  @Emp_ID = 6, @Status ='A', @Date_Of_Resignation = '2023-07-22'
+
+
 
 
 
@@ -218,3 +230,114 @@ select * from Emp_Exit_Table
 
 
 
+-----------------------------------------------------------------
+
+CREATE DATABASE InsteadOfTriggers
+ 
+USE InsteadOfTriggers
+ 
+create table Tbl_Customer 
+(
+Id int primary key, 
+Name varchar(50), 
+Gender varchar(20), 
+City varchar(30), 
+ContactNo varchar(50)
+);
+ 
+SELECT * FROM dbo.Tbl_Customer
+ 
+insert into Tbl_Customer values(1,'Pradeep','Male','Vadodara','03335465678');
+insert into Tbl_Customer values(2,'Kinjal','Female','Vadodara','03225465678');
+insert into Tbl_Customer values(3,'Somesh','Male','Vadodara','03135468778');
+insert into Tbl_Customer values(4,'Dhruvesh','Male','Gotri','03005465678');
+insert into Tbl_Customer values(5,'Vishal','Male','Waghodia','03135465678');
+insert into Tbl_Customer values(6,'Aman','Male','Anand','03135468774');
+insert into Tbl_Customer values(7,'Dipak','Male','Anand','03335468774');
+ 
+-- CREATING AUDIT TABLE FOR CUSTOMER
+create table Customer_Audit_table 
+(
+Audit_Id int primary key identity,
+Audit_Information varchar(max)
+);
+ 
+select * from Customer_Audit_table
+ 
+-- CREATING INSTEAD OF INSERT TRIGGER WHICH PREVENTS THE INSERTION
+create or alter trigger tr_Customer_InsteadOf_Insert
+on Tbl_Customer
+instead of insert
+as
+begin
+	print 'You are not allowed to insert data in this table !!'
+end
+ 
+drop trigger tr_Customer_InsteadOf_Insert;
+ 
+-- CREATING INSTEAD OF INSERT TRIGGER WHICH INSERTS THE DATA IN AUDIT TABLE
+ 
+create trigger tr_Customer_InsteadOf_Insert_Audit
+on Tbl_Customer
+instead of insert
+as
+begin
+	insert into Customer_Audit_table values('SomeOne tries to insert data in customer table at: ' + cast(getdate() as varchar(50)));
+end
+ 
+ 
+-- CREATING INSTEAD OF UPDATE TRIGGER WHICH PREVENTS THE UPDATION
+create trigger tr_Customer_InsteadOf_Update
+on Tbl_Customer
+instead of update
+as
+begin
+	print 'You are not allowed to update data in this table !!'
+END
+ 
+drop trigger tr_Customer_InsteadOf_Update;
+ 
+-- CREATING INSTEAD OF UPDATE TRIGGER WHICH INSERTS THE A ROW IN AUDIT TABLE WHEN SOMEONE TRIES TO UPDATE DATA
+ 
+create trigger tr_Customer_InsteadOf_Update_Audit
+on Tbl_Customer
+instead of update
+as
+begin
+	insert into Customer_Audit_table values('SomeOne tries to update data in customer table at: ' + cast(getdate() as varchar(50)));
+end
+ 
+update Tbl_Customer set Name = 'Pravin' where id = 6;
+ 
+ 
+-- CREATING INSTEAD OF DELETE TRIGGER WHICH PREVENTS THE DELETION
+create trigger tr_Customer_InsteadOf_Delete
+on Tbl_Customer
+instead of delete
+as
+begin
+	print 'You are not allowed to delete anything in this table !!'
+END
+ 
+DELETE FROM dbo.Tbl_Customer WHERE Id=6
+ 
+SELECT * FROM dbo.Customer_Audit_table
+ 
+--DROP TRIGGER tr_Customer_InsteadOf_Delete
+ 
+-- CREATING INSTEAD OF DELETE TRIGGER WHICH INSERTS A ROW IN AUDIT TABLE WHEN SOMEONE TRIES TO DELETE DATA FROM CUSTOMER TABLE
+ 
+CREATE trigger tr_Customer_InsteadOf_Delete_Audit
+on Tbl_Customer
+instead of delete
+as
+begin
+	insert into Customer_Audit_table values('SomeOne tries to delete data from customer table at: ' + cast(getdate() as varchar(50)));
+end
+ 
+delete from Tbl_Customer where id = 6;
+ 
+--SELECT * FROM dbo.Customer_Audit_table
+ 
+-- VIEWING THE TRIGGER
+sp_helptext tr_Customer_InsteadOf_Delete_Audit;
