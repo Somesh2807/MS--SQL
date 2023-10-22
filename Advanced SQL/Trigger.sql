@@ -264,6 +264,7 @@ set nocount on
 update o set o.day_date = getdate(), o.total_price = case
 when product_id in (select o.product_id from order_tbl o
 join product p on o.product_id=p.p_id)
+and p.category='Pizza'
 and (datepart(weekday, cast(o.day_date as date)) in (3, 6)) -- tuesday (3) and friday (6)
 and (o.quantity > 2 or (o.quantity * p.price_per_unit > 500))
 and o.mode_of_order='online'
@@ -276,11 +277,32 @@ join size as s on o.Size_ID=s.s_id
 where o.o_id in (select distinct i.o_id from inserted i)
 
 end
+--------Trigger for Other Beverages
+
+create or alter trigger etc
+on order_tbl
+after insert
+as
+begin
+set nocount on
+
+update o set o.day_date = getdate(),o.Size_ID = 0, o.total_price = case
+when product_id in (select o.product_id from order_tbl o
+join product p on o.product_id=p.p_id)
+and p.category!='Pizza'
+then (o.quantity * p.price_per_unit)*1.18 -- 50% discount and 18% gst
+end
+from order_tbl as o
+join product as p on o.product_id = p.p_id
+where o.o_id in (select distinct i.o_id from inserted i)
+
+end
 
 ------TO INSERT DATA IN Customer detail
 
-exec sp_addcustomer  @c_name ='pravin dubey  ' ,@Contact_no = 8200878451,
-@Address = 'malibu',@Email_ID = 'praveen.dubey@outlook.com'
+exec sp_addcustomer  @c_name ='Vineeta SIngh' ,@Contact_no = 7983749554,
+@Address = 'vadodara',@Email_ID = 'vineeta.singh@outlook.com'
+
 -----To find customer detail
 
 select * from customer where contact_no = 8200857566 or email= 'somesh820@outlook.com'
@@ -288,7 +310,7 @@ select * from customer where contact_no = 8200857566 or email= 'somesh820@outloo
 ----To Insert Data Into Order Table
 
 
-insert into order_tbl (customer_id,product_id,Size_ID,mode_of_order,quantity) values (5003,1,104,'offline',2)
+insert into order_tbl (customer_id,product_id,Size_ID,mode_of_order,quantity) values (5004,6,500,'online',2)
 
 ---------------------------------------------
 
@@ -296,3 +318,8 @@ select * from size
 select * from product
 select * from order_tbl
 select * from customer
+
+
+----
+
+
