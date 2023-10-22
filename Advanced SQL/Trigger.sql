@@ -182,51 +182,50 @@ EXEC RecordTransaction
 
 	select * from Account
 
------------------------------------------------------------------------------------------------------------
+---Lapinoz Pizza Trigger with SP
+-- Table: size
+create table dbo.size (
+    s_id int identity (101, 1) not null,
+    s_name varchar(15) null,
+    s_price money null,
+    primary key clustered (s_id asc)
+)
 
+-- Table: product
+create table dbo.product (
+    p_id int identity (1, 1) not null,
+    p_name varchar(15) null,
+    category varchar(20) null,
+    price_per_unit money null,
+    primary key clustered (p_id asc)
+)
 
-CREATE TABLE [dbo].[size] (
-    [s_id]      INT          IDENTITY (101, 1) NOT NULL,
-    [s_name]    VARCHAR (15) NULL,
-    [S_Price++] MONEY        NULL,
-    PRIMARY KEY CLUSTERED ([s_id] ASC)
-);
+-- Table: customer
+create table dbo.customer (
+    c_id int identity (5001, 1) not null,
+    c_name varchar(20) null,
+    contact_no bigint null,
+    address varchar(50) null,
+    email varchar(50) null,
+    primary key clustered (c_id asc),
+    constraint ck_len check (len(contact_no) = 10)
+)
 
-
-CREATE TABLE [dbo].[product] (
-    [p_id]           INT          IDENTITY (1, 1) NOT NULL,
-    [p_name]         VARCHAR (15) NULL,
-    [category]       VARCHAR (20) NULL,
-    [Price_per_unit] MONEY        NULL,
-    PRIMARY KEY CLUSTERED ([p_id] ASC)
-);
-
-
-CREATE TABLE [dbo].[customer] (
-    [c_id]       INT          IDENTITY (5001, 1) NOT NULL,
-    [c_name]     VARCHAR (20) NULL,
-    [contact_no] BIGINT       NULL,
-    [address]    VARCHAR (50) NULL,
-    [email]      VARCHAR (50) NULL,
-    PRIMARY KEY CLUSTERED ([c_id] ASC),
-    CONSTRAINT [ck_len] CHECK (len([contact_no])=(10))
-);
-
-CREATE TABLE [dbo].[order_tbl] (
-    [o_id]          INT          IDENTITY (501, 1) NOT NULL,
-    [customer_id]   INT          NULL,
-    [product_id]    INT          NULL,
-    [Size_ID]       INT          NULL,
-    [day_date]      VARCHAR (50) NULL,
-    [mode_of_order] VARCHAR (10) NULL,
-    [quantity]      INT          NULL,
-    [total_price]   DECIMAL (18) NULL,
-    PRIMARY KEY CLUSTERED ([o_id] ASC),
-    FOREIGN KEY ([customer_id]) REFERENCES [dbo].[customer] ([c_id]),
-    FOREIGN KEY ([product_id]) REFERENCES [dbo].[product] ([p_id]),
-    CONSTRAINT [ck_mdoe] CHECK ([mode_of_order]='Online' OR [mode_of_order]='offline')
-);
-
+-- Table: order_tbl
+create table dbo.order_tbl (
+    o_id int identity (501, 1) not null,
+    customer_id int null,
+    product_id int null,
+    size_id int null,
+    day_date date null,
+    mode_of_order varchar(10) null,
+    quantity int null,
+    total_price decimal(18) null,
+    primary key clustered (o_id asc),
+    foreign key (customer_id) references dbo.customer (c_id),
+    foreign key (product_id) references dbo.product (p_id),
+    constraint ck_mode check (mode_of_order = 'online' or mode_of_order = 'offline')
+)
 
 insert into size values('Regular',0),
 ('Medium',70),
@@ -245,56 +244,55 @@ select * from customer
 select * from order_tbl
 
 
-create proc sp_addcustomer
+create or alter proc sp_addcustomer
 (@c_name Nvarchar(50),@Contact_no BIGINT,@Address NVARCHAR(150),@Email_ID NVarchar(100))
 as 
 begin
 insert into customer (c_name,contact_no,address,email) values (@c_name,@Contact_no,@Address,@Email_ID)
+select top 1 * from customer order by  c_id desc
 end
 
+----Trigger offer applicable on Tuesday and Friday, minmum 2 order and it should be online only
 
- -- Create a trigger for the 'order_tbl' table
-CREATE TRIGGER ApplyPizzaDiscountAndCalculateGST
-ON [dbo].[order_tbl]
-AFTER INSERT
-AS
-BEGIN
-    SET NOCOUNT ON;
+create or alter trigger applypizzadiscountandcalculategst
+on order_tbl
+after insert
+as
+begin
+set nocount on
 
-    -- Calculate the total price and apply the discount and GST for eligible pizza orders
-    UPDATE o
-    SET o.total_price = CASE
-            WHEN p.[category] = 'Pizza' 
-                AND (DATEPART(WEEKDAY, CAST(o.day_date AS DATE)) IN (3, 6)) -- Tuesday (3) and Friday (6)
-                AND (o.quantity > 2 OR (o.quantity * p.[Price_per_unit] > 500))
-                THEN (o.quantity * p.[Price_per_unit]) * 0.5 * 1.18 -- 50% discount and 18% GST
-            ELSE o.quantity * p.[Price_per_unit] * 1.18 -- No discount, just 18% GST
-        END
-    FROM [dbo].[order_tbl] AS o
-    JOIN [dbo].[product] AS p ON o.product_id = p.p_id
-    WHERE o.o_id IN (SELECT DISTINCT i.o_id FROM INSERTED i);
+update o set o.day_date = getdate(), o.total_price = case
+when product_id in (select o.product_id from order_tbl o
+join product p on o.product_id=p.p_id)
+and (datepart(weekday, cast(o.day_date as date)) in (3, 6)) -- tuesday (3) and friday (6)
+and (o.quantity > 2 or (o.quantity * p.price_per_unit > 500))
+and o.mode_of_order='online'
+then (o.quantity * p.price_per_unit)+(s.[S_Price++]*o.quantity) *0.5*1.18 -- 50% discount and 18% gst
+else (o.quantity * p.price_per_unit)+(s.[S_Price++]*o.quantity) *1.18 -- no discount, just 18% gst
+end
+from order_tbl as o
+join product as p on o.product_id = p.p_id
+join size as s on o.Size_ID=s.s_id 
+where o.o_id in (select distinct i.o_id from inserted i)
 
-END;
-
-
+end
 
 ------TO INSERT DATA IN Customer detail
 
-exec sp_addcustomer  @c_name ='Somesh Jatav  ' ,@Contact_no = 8200857566,
-@Address = 'The rise',@Email_ID = 'somesh8200@outlook.com'
+exec sp_addcustomer  @c_name ='pravin dubey  ' ,@Contact_no = 8200878451,
+@Address = 'malibu',@Email_ID = 'praveen.dubey@outlook.com'
+-----To find customer detail
+
+select * from customer where contact_no = 8200857566 or email= 'somesh820@outlook.com'
+
+----To Insert Data Into Order Table
+
+
+insert into order_tbl (customer_id,product_id,Size_ID,mode_of_order,quantity) values (5003,1,104,'offline',2)
 
 ---------------------------------------------
 
-
-CREATE TRIGGER ApplyPizzaDiscountAndCalculateGST
-ON [dbo].[order_tbl]
-AFTER INSERT
-AS
-BEGIN
-    SET NOCOUNT ON;
-
-
-
-
-
-
+select * from size
+select * from product
+select * from order_tbl
+select * from customer
