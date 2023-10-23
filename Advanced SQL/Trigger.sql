@@ -328,4 +328,3 @@ select * from customer
 
 
 
-select name
