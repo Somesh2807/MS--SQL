@@ -182,7 +182,7 @@ EXEC RecordTransaction
 
 	select * from Account
 
----Lapinoz Pizza Trigger with SP
+------Lapinoz Pizza Trigger with SP
 -- Table: size
 create table dbo.size (
     s_id int identity (101, 1) not null,
@@ -240,8 +240,9 @@ insert into product values('Veg','Pizza',200),
 
 select * from size
 select * from product
-select * from customer
 select * from order_tbl
+select * from customer
+
 
 
 create or alter proc sp_addcustomer
@@ -254,49 +255,59 @@ end
 
 ----Trigger offer applicable on Tuesday and Friday, minmum 2 order and it should be online only
 
-create or alter trigger applypizzadiscountandcalculategst
+
+create or alter trigger pizzadiscount
 on order_tbl
 after insert
 as
 begin
 set nocount on
 
-update o set o.day_date = getdate(), o.total_price = case
-when product_id in (select o.product_id from order_tbl o
-join product p on o.product_id=p.p_id)
-and p.category='Pizza'
-and (datepart(weekday, cast(o.day_date as date)) in (3, 6)) -- tuesday (3) and friday (6)
+declare @category nvarchar(20)
+
+select @category = p.category
+from product p
+where p.p_id in (
+select o.product_id
+from inserted i
+join order_tbl o on i.product_id = o.product_id
+where p.category) = 'pizza'
+)
+if @category = 'pizza'
+begin
+update o
+set
+day_date = getdate(),
+total_price = 
+case
+when @category = 'pizza' 
+and datepart(weekday, cast(o.day_date as date)) in (3, 6) -- tuesday (3) and friday (6)
 and (o.quantity > 2 or (o.quantity * p.price_per_unit > 500))
-and o.mode_of_order='online'
-then (o.quantity * p.price_per_unit)+(s.[S_Price++]*o.quantity) *0.5*1.18 -- 50% discount and 18% gst
-else (o.quantity * p.price_per_unit)+(s.[S_Price++]*o.quantity) *1.18 -- no discount, just 18% gst
+and o.mode_of_order = 'online'
+then (o.quantity * p.price_per_unit + s.[s_price++] * o.quantity) * 0.5 * 1.18 -- 50% discount and 18% gst
+else
+(o.quantity * p.price_per_unit + s.[s_price++] * o.quantity) * 1.18 -- no discount, just 18% gst
 end
-from order_tbl as o
-join product as p on o.product_id = p.p_id
-join size as s on o.Size_ID=s.s_id 
-where o.o_id in (select distinct i.o_id from inserted i)
-
+from order_tbl o
+join product p on o.product_id = p.p_id
+join size s on o.size_id = s.s_id
+where o.o_id in (select i.o_id from inserted i)
 end
---------Trigger for Other Beverages
-
-create or alter trigger etc
-on order_tbl
-after insert
-as
+else
 begin
-set nocount on
-
-update o set o.day_date = getdate(),o.Size_ID = 0, o.total_price = case
-when product_id in (select o.product_id from order_tbl o
-join product p on o.product_id=p.p_id)
-and p.category!='Pizza'
-then (o.quantity * p.price_per_unit)*1.18 -- 50% discount and 18% gst
+update o
+set
+day_date = getdate(),
+size_id = 0,
+total_price = (o.quantity * p.price_per_unit) * 1.18 -- 18% gst
+from order_tbl o
+join product p on o.product_id = p.p_id
+where o.o_id in (select i.o_id from inserted i)
 end
-from order_tbl as o
-join product as p on o.product_id = p.p_id
-where o.o_id in (select distinct i.o_id from inserted i)
-
 end
+
+
+
 
 ------TO INSERT DATA IN Customer detail
 
@@ -310,7 +321,7 @@ select * from customer where contact_no = 8200857566 or email= 'somesh820@outloo
 ----To Insert Data Into Order Table
 
 
-insert into order_tbl (customer_id,product_id,Size_ID,mode_of_order,quantity) values (5004,6,500,'online',2)
+insert into order_tbl (customer_id,product_id,Size_ID,mode_of_order,quantity) values (5003,6,104,'online',2)
 
 ---------------------------------------------
 
@@ -320,6 +331,5 @@ select * from order_tbl
 select * from customer
 
 
-----
 
-
+select name
