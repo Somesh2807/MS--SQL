@@ -182,9 +182,10 @@ EXEC RecordTransaction
 
 	select * from Account
 
-------Lapinoz Pizza Trigger with SP
--- Table: size
-create table dbo.size (
+------ Pizza order with Trigger & SP
+create database pizza
+use pizza
+create table size (
     s_id int identity (101, 1) not null,
     s_name varchar(15) null,
     s_price money null,
@@ -192,7 +193,7 @@ create table dbo.size (
 )
 
 -- Table: product
-create table dbo.product (
+create table product (
     p_id int identity (1, 1) not null,
     p_name varchar(15) null,
     category varchar(20) null,
@@ -201,7 +202,7 @@ create table dbo.product (
 )
 
 -- Table: customer
-create table dbo.customer (
+create table customer (
     c_id int identity (5001, 1) not null,
     c_name varchar(20) null,
     contact_no bigint null,
@@ -212,7 +213,7 @@ create table dbo.customer (
 )
 
 -- Table: order_tbl
-create table dbo.order_tbl (
+create table order_tbl (
     o_id int identity (501, 1) not null,
     customer_id int null,
     product_id int null,
@@ -266,20 +267,15 @@ set nocount on
 declare @category nvarchar(20)--Declatred Variable to store Cateogory of order
 
 select @category = p.category---Variable source code
-from product p
-where p.p_id in (
-select o.product_id
-from inserted i
+from product p where p.p_id in (select o.product_id from inserted i 
 join order_tbl o on i.product_id = o.product_id
 where p.category = 'pizza'
 )
+
 if @category = 'pizza'---conditions begin to check whether order is pizza or not ?
 begin   ----IF yes then order as per below conditions
-update o
-set
-day_date = getdate(),
-total_price = 
-case
+update o  set day_date = getdate(),
+total_price = case
 when @category = 'pizza' 
 and datepart(weekday, cast(o.day_date as date)) in (3, 6) -- tuesday (3) and friday (6)
 and (o.quantity > 2 or (o.quantity * p.price_per_unit > 500))
