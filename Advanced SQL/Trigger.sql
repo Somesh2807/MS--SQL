@@ -278,7 +278,8 @@ update o  set day_date = getdate(),
 total_price = case
 when @category = 'pizza' 
 and datepart(weekday, cast(o.day_date as date)) in (3, 6) -- tuesday (3) and friday (6)
-and (o.quantity > 2 or (o.quantity * p.price_per_unit > 500))
+and (o.quantity > 2 )
+and (o.quantity * p.price_per_unit > 500)
 and o.mode_of_order = 'online'
 then (o.quantity * p.price_per_unit + s.[s_price++] * o.quantity) * 0.5 * 1.18 -- 50% discount and 18% gst
 else (o.quantity * p.price_per_unit + s.[s_price++] * o.quantity) * 1.18 -- no discount, just 18% gst
@@ -300,8 +301,12 @@ from order_tbl o
 join product p on o.product_id = p.p_id
 where o.o_id in (select i.o_id from inserted i)
 end
+
 end
 
+
+select customer_id,sum(total_price)as total_price from order_tbl where customer_id=5003
+group by customer_id
 
 ------TO INSERT DATA IN Customer detail
 
@@ -313,7 +318,7 @@ select * from customer where contact_no = 8200857566 or email= 'somesh820@outloo
 
 ----To Insert Data Into Order Table
 
-insert into order_tbl (customer_id,product_id,Size_ID,mode_of_order,quantity) values (5003,6,104,'online',2)
+insert into order_tbl (customer_id,product_id,Size_ID,mode_of_order,quantity) values (5003,2,105,'online',2)
 
 ---------------------------------------------
 

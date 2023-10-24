@@ -11,16 +11,16 @@
   DTS:LocaleID="16393"
   DTS:ObjectName="Package"
   DTS:PackageType="5"
-  DTS:VersionBuild="12"
-  DTS:VersionGUID="{5C8A0FFC-F98E-4071-96E8-066885176ED0}">
+  DTS:VersionBuild="41"
+  DTS:VersionGUID="{AD7498A7-1827-4068-AE0A-EDAD6F27E44B}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
     <DTS:ConnectionManager
-      DTS:refId="Package.ConnectionManagers[Contact Number]"
+      DTS:refId="Package.ConnectionManagers[Flat File Connection Manager]"
       DTS:CreationName="FLATFILE"
-      DTS:DTSID="{9AC23B81-8E48-4F61-894C-68217E48E366}"
-      DTS:ObjectName="Contact Number">
+      DTS:DTSID="{D0633DAB-768C-4E29-ADC7-297CB93B9CB7}"
+      DTS:ObjectName="Flat File Connection Manager">
       <DTS:ObjectData>
         <DTS:ConnectionManager
           DTS:Format="Delimited"
@@ -30,44 +30,182 @@
           DTS:RowDelimiter=""
           DTS:TextQualifier="_x003C_none_x003E_"
           DTS:CodePage="1252"
-          DTS:ConnectionString="C:\Users\somes\OneDrive\All\CONTACT NUMBER\STOCK MARKET NUMBERS\SampleFile.csv">
+          DTS:ConnectionString="G:\test.csv">
           <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="AGE"
+              DTS:DTSID="{A138140B-0199-432E-AA22-FD8D4CD7EEEE}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="WORKCLASS"
+              DTS:DTSID="{79B43FF3-73AF-4373-BD47-705274CFDE1E}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="FNLWGT"
+              DTS:DTSID="{87E67526-637F-4608-9CE9-FEAB4BC322FD}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="EDUCATION"
+              DTS:DTSID="{C021DAD9-9CA6-4203-A66D-B29B3CAD650E}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="EDUCATION NUM"
+              DTS:DTSID="{ED43A150-FB51-4941-93C8-B5A366D1CE9C}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="MARITAL STATUS"
+              DTS:DTSID="{CF43D854-21D3-49AA-A1B4-91516BA2361B}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="OCCUPATION"
+              DTS:DTSID="{D109C106-7B5B-4EB5-B438-6B2903C80FF3}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="RELATIONSHIP"
+              DTS:DTSID="{12197BC5-9821-4EED-A10B-3D90FDC616CB}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="RACE"
+              DTS:DTSID="{3C45C628-AE72-407C-8A85-2B72BDFC3168}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="SEX"
+              DTS:DTSID="{631BCED8-7460-4AA8-B17C-8961C1A0C503}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="CAPITAL GAIN"
+              DTS:DTSID="{98335136-3AB6-46F7-8E96-00F47702BD08}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="CAPITAL LOSS"
+              DTS:DTSID="{A83F8FB2-4662-4D56-B935-37AB04563528}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="HOURS PER WEEK"
+              DTS:DTSID="{7978DE5F-C30F-4E61-BC31-9A505FD4DBCD}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="NATIVE COUNTRY"
+              DTS:DTSID="{8E233A0D-7659-4AE8-B49F-92AD2366666E}"
+              DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
               DTS:ColumnDelimiter="_x000D__x000A_"
               DTS:MaximumWidth="50"
               DTS:DataType="129"
               DTS:TextQualified="True"
-              DTS:ObjectName="917051316357"
-              DTS:DTSID="{6E89DF2D-2922-4FCA-BCB8-9857563523BC}"
+              DTS:ObjectName="TARGET"
+              DTS:DTSID="{71611198-68A5-4C70-8D31-30C735D6A6BA}"
               DTS:CreationName="" />
           </DTS:FlatFileColumns>
         </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
     <DTS:ConnectionManager
-      DTS:refId="Package.ConnectionManagers[VINESH.AdventureWorks2022 1]"
+      DTS:refId="Package.ConnectionManagers[Vinesh.SSIS]"
       DTS:CreationName="OLEDB"
-      DTS:DTSID="{7AC0A932-3983-40AC-908F-CFF85D44CA88}"
-      DTS:ObjectName="VINESH.AdventureWorks2022 1">
+      DTS:DTSID="{1A45899A-B132-4820-B11A-D589618E1B44}"
+      DTS:ObjectName="Vinesh.SSIS">
       <DTS:ObjectData>
         <DTS:ConnectionManager
           DTS:ConnectRetryCount="1"
           DTS:ConnectRetryInterval="5"
-          DTS:ConnectionString="Data Source=VINESH;Initial Catalog=AdventureWorks2022;Provider=SQLNCLI11.1;Integrated Security=SSPI;Application Name=SSIS-Package-{7AC0A932-3983-40AC-908F-CFF85D44CA88}VINESH.AdventureWorks2022 1;Auto Translate=False;" />
+          DTS:ConnectionString="Data Source=Vinesh;Initial Catalog=SSIS;Provider=SQLNCLI11.1;Integrated Security=SSPI;Application Name=SSIS-Package-{1A45899A-B132-4820-B11A-D589618E1B44}Vinesh.SSIS;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[VINESH.SSIS1]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{701EB5C9-02FA-4F9E-A5DF-0BBEB0539155}"
+      DTS:ObjectName="VINESH.SSIS1">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=VINESH;Initial Catalog=SSIS1;Provider=SQLNCLI11.1;Integrated Security=SSPI;Application Name=SSIS-Package-{701EB5C9-02FA-4F9E-A5DF-0BBEB0539155}VINESH.SSIS1;Auto Translate=False;" />
       </DTS:ObjectData>
     </DTS:ConnectionManager>
   </DTS:ConnectionManagers>
   <DTS:Variables />
   <DTS:Executables>
     <DTS:Executable
-      DTS:refId="Package\Sales Data"
+      DTS:refId="Package\Data Flow Task"
       DTS:CreationName="Microsoft.Pipeline"
       DTS:Description="Data Flow Task"
-      DTS:DTSID="{91F4579F-06DF-4FF1-95C3-CA106B56D4C0}"
+      DTS:DTSID="{6470BC33-4024-45B3-9D94-5B799385B3AA}"
       DTS:ExecutableType="Microsoft.Pipeline"
       DTS:LocaleID="-1"
-      DTS:ObjectName="Sales Data"
+      DTS:ObjectName="Data Flow Task"
       DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
       <DTS:Variables />
       <DTS:ObjectData>
@@ -75,12 +213,12 @@
           version="1">
           <components>
             <component
-              refId="Package\Sales Data\COntact Number"
+              refId="Package\Data Flow Task\Flat File Source"
               componentClassID="Microsoft.FlatFileSource"
               contactInfo="Flat File Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
               description="Flat File Source"
               localeId="16393"
-              name="COntact Number"
+              name="Flat File Source"
               usesDispositions="true"
               version="1">
               <properties>
@@ -95,26 +233,334 @@
               </properties>
               <connections>
                 <connection
-                  refId="Package\Sales Data\COntact Number.Connections[FlatFileConnection]"
-                  connectionManagerID="Package.ConnectionManagers[Contact Number]"
-                  connectionManagerRefId="Package.ConnectionManagers[Contact Number]"
+                  refId="Package\Data Flow Task\Flat File Source.Connections[FlatFileConnection]"
+                  connectionManagerID="Package.ConnectionManagers[Flat File Connection Manager]"
+                  connectionManagerRefId="Package.ConnectionManagers[Flat File Connection Manager]"
                   name="FlatFileConnection" />
               </connections>
               <outputs>
                 <output
-                  refId="Package\Sales Data\COntact Number.Outputs[Flat File Source Output]"
+                  refId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output]"
                   name="Flat File Source Output">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\Sales Data\COntact Number.Outputs[Flat File Source Output].Columns[917051316357]"
+                      refId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[AGE]"
                       codePage="1252"
                       dataType="str"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Sales Data\COntact Number.Outputs[Flat File Source Output].ExternalColumns[917051316357]"
+                      externalMetadataColumnId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[AGE]"
                       length="50"
-                      lineageId="Package\Sales Data\COntact Number.Outputs[Flat File Source Output].Columns[917051316357]"
-                      name="917051316357"
+                      lineageId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[AGE]"
+                      name="AGE"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[WORKCLASS]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[WORKCLASS]"
+                      length="50"
+                      lineageId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[WORKCLASS]"
+                      name="WORKCLASS"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[FNLWGT]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[FNLWGT]"
+                      length="50"
+                      lineageId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[FNLWGT]"
+                      name="FNLWGT"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[EDUCATION]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[EDUCATION]"
+                      length="50"
+                      lineageId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[EDUCATION]"
+                      name="EDUCATION"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[EDUCATION NUM]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[EDUCATION NUM]"
+                      length="50"
+                      lineageId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[EDUCATION NUM]"
+                      name="EDUCATION NUM"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[MARITAL STATUS]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[MARITAL STATUS]"
+                      length="50"
+                      lineageId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[MARITAL STATUS]"
+                      name="MARITAL STATUS"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[OCCUPATION]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[OCCUPATION]"
+                      length="50"
+                      lineageId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[OCCUPATION]"
+                      name="OCCUPATION"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[RELATIONSHIP]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[RELATIONSHIP]"
+                      length="50"
+                      lineageId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[RELATIONSHIP]"
+                      name="RELATIONSHIP"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[RACE]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[RACE]"
+                      length="50"
+                      lineageId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[RACE]"
+                      name="RACE"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[SEX]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[SEX]"
+                      length="50"
+                      lineageId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[SEX]"
+                      name="SEX"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[CAPITAL GAIN]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[CAPITAL GAIN]"
+                      length="50"
+                      lineageId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[CAPITAL GAIN]"
+                      name="CAPITAL GAIN"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[CAPITAL LOSS]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[CAPITAL LOSS]"
+                      length="50"
+                      lineageId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[CAPITAL LOSS]"
+                      name="CAPITAL LOSS"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[HOURS PER WEEK]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[HOURS PER WEEK]"
+                      length="50"
+                      lineageId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[HOURS PER WEEK]"
+                      name="HOURS PER WEEK"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[NATIVE COUNTRY]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[NATIVE COUNTRY]"
+                      length="50"
+                      lineageId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[NATIVE COUNTRY]"
+                      name="NATIVE COUNTRY"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[TARGET]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[TARGET]"
+                      length="50"
+                      lineageId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[TARGET]"
+                      name="TARGET"
                       truncationRowDisposition="FailComponent">
                       <properties>
                         <property
@@ -131,35 +577,119 @@
                   <externalMetadataColumns
                     isUsed="True">
                     <externalMetadataColumn
-                      refId="Package\Sales Data\COntact Number.Outputs[Flat File Source Output].ExternalColumns[917051316357]"
+                      refId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[AGE]"
                       codePage="1252"
                       dataType="str"
                       length="50"
-                      name="917051316357" />
+                      name="AGE" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[WORKCLASS]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="WORKCLASS" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[FNLWGT]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="FNLWGT" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[EDUCATION]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="EDUCATION" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[EDUCATION NUM]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="EDUCATION NUM" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[MARITAL STATUS]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="MARITAL STATUS" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[OCCUPATION]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="OCCUPATION" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[RELATIONSHIP]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="RELATIONSHIP" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[RACE]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="RACE" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[SEX]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="SEX" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[CAPITAL GAIN]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="CAPITAL GAIN" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[CAPITAL LOSS]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="CAPITAL LOSS" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[HOURS PER WEEK]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="HOURS PER WEEK" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[NATIVE COUNTRY]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="NATIVE COUNTRY" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[TARGET]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="TARGET" />
                   </externalMetadataColumns>
                 </output>
                 <output
-                  refId="Package\Sales Data\COntact Number.Outputs[Flat File Source Error Output]"
+                  refId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Error Output]"
                   isErrorOut="true"
                   name="Flat File Source Error Output">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\Sales Data\COntact Number.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                      refId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
                       codePage="1252"
                       dataType="text"
                       description="Flat File Source Error Output Column"
-                      lineageId="Package\Sales Data\COntact Number.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                      lineageId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
                       name="Flat File Source Error Output Column" />
                     <outputColumn
-                      refId="Package\Sales Data\COntact Number.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                      refId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
                       dataType="i4"
-                      lineageId="Package\Sales Data\COntact Number.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                      lineageId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
                       name="ErrorCode"
                       specialFlags="1" />
                     <outputColumn
-                      refId="Package\Sales Data\COntact Number.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                      refId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
                       dataType="i4"
-                      lineageId="Package\Sales Data\COntact Number.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                      lineageId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
                       name="ErrorColumn"
                       specialFlags="2" />
                   </outputColumns>
@@ -168,11 +698,11 @@
               </outputs>
             </component>
             <component
-              refId="Package\Sales Data\LOAD INTO DB"
+              refId="Package\Data Flow Task\OLE DB Destination"
               componentClassID="Microsoft.OLEDBDestination"
               contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
               description="OLE DB Destination"
-              name="LOAD INTO DB"
+              name="OLE DB Destination"
               usesDispositions="true"
               version="4">
               <properties>
@@ -183,7 +713,7 @@
                 <property
                   dataType="System.String"
                   description="Specifies the name of the database object used to open a rowset."
-                  name="OpenRowset">[Contact_Number]</property>
+                  name="OpenRowset">[dbo].[OLE DB Destination]</property>
                 <property
                   dataType="System.String"
                   description="Specifies the variable that contains the name of the database object used to open a rowset."
@@ -213,7 +743,462 @@
                 <property
                   dataType="System.Boolean"
                   description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
-                  name="FastLoadKeepNulls">false</property>
+                  name="FastLoadKeepNulls">true</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions">TABLOCK</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Data Flow Task\OLE DB Destination.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[Vinesh.SSIS]"
+                  connectionManagerRefId="Package.ConnectionManagers[Vinesh.SSIS]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[WORKCLASS]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="WORKCLASS"
+                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[WORKCLASS]"
+                      lineageId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[WORKCLASS]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[FNLWGT]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="FNLWGT"
+                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[FNLWGT]"
+                      lineageId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[FNLWGT]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[EDUCATION]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="EDUCATION"
+                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[EDUCATION]"
+                      lineageId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[EDUCATION]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[OCCUPATION]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="OCCUPATION"
+                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[OCCUPATION]"
+                      lineageId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[OCCUPATION]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[RELATIONSHIP]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="RELATIONSHIP"
+                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[RELATIONSHIP]"
+                      lineageId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[RELATIONSHIP]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[RACE]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="RACE"
+                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[RACE]"
+                      lineageId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[RACE]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[SEX]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="SEX"
+                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[SEX]"
+                      lineageId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[SEX]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[TARGET]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="TARGET"
+                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[TARGET]"
+                      lineageId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[TARGET]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[AGE]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="AGE"
+                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[AGE]"
+                      lineageId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[AGE]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[EDUCATION NUM]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="EDUCATION NUM"
+                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[EDUCATION NUM]"
+                      lineageId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[EDUCATION NUM]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[MARITAL STATUS]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="MARITAL STATUS"
+                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[MARITAL STATUS]"
+                      lineageId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[MARITAL STATUS]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[CAPITAL GAIN]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="CAPITAL GAIN"
+                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[CAPITAL GAIN]"
+                      lineageId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[CAPITAL GAIN]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[CAPITAL LOSS]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="CAPITAL LOSS"
+                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[CAPITAL LOSS]"
+                      lineageId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[CAPITAL LOSS]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[HOURS PER WEEK]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="HOURS PER WEEK"
+                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[HOURS PER WEEK]"
+                      lineageId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[HOURS PER WEEK]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[NATIVE COUNTRY]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="NATIVE COUNTRY"
+                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[NATIVE COUNTRY]"
+                      lineageId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[NATIVE COUNTRY]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[AGE]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="AGE" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[WORKCLASS]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="WORKCLASS" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[FNLWGT]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="FNLWGT" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[EDUCATION]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="EDUCATION" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[OCCUPATION]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="OCCUPATION" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[RELATIONSHIP]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="RELATIONSHIP" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[RACE]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="RACE" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[SEX]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="SEX" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[TARGET]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="TARGET" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[EDUCATION NUM]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="EDUCATION NUM" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[MARITAL STATUS]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="MARITAL STATUS" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[CAPITAL GAIN]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="CAPITAL GAIN" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[CAPITAL LOSS]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="CAPITAL LOSS" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[HOURS PER WEEK]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="HOURS PER WEEK" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[NATIVE COUNTRY]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="NATIVE COUNTRY" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Data Flow Task\OLE DB Destination.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Data Flow Task.Paths[Flat File Source Output]"
+              endId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input]"
+              name="Flat File Source Output"
+              startId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Delete Rows"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{841B7DFE-8D41-435D-B66A-2431AB3EC681}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Delete Rows"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{1A45899A-B132-4820-B11A-D589618E1B44}"
+          SQLTask:SqlStatementSource="truncate table [dbo].[OLE DB Destination]" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Delete Task"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{EEB6280B-6F0A-4D19-9472-93F46048102D}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Delete Task"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{701EB5C9-02FA-4F9E-A5DF-0BBEB0539155}"
+          SQLTask:SqlStatementSource="truncate table [dbo].[OLE DB Destination]" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\load into db fro db"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{AE752CD8-E53D-4624-AB7E-4633C58E9124}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="load into db fro db"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\load into db fro db\Derived Column"
+              componentClassID="Microsoft.DerivedColumn"
+              contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
+              name="Derived Column"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\load into db fro db\Derived Column.Inputs[Derived Column Input]"
+                  description="Input to the Derived Column Transformation"
+                  name="Derived Column Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\load into db fro db\Derived Column.Inputs[Derived Column Input].Columns[EDUCATION]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="EDUCATION"
+                      lineageId="Package\load into db fro db\OLE DB Source.Outputs[OLE DB Source Output].Columns[EDUCATION]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\load into db fro db\Derived Column.Outputs[Derived Column Output]"
+                  description="Default Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  name="Derived Column Output"
+                  synchronousInputId="Package\load into db fro db\Derived Column.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\load into db fro db\Derived Column.Outputs[Derived Column Output].Columns[Education_3]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      length="3"
+                      lineageId="Package\load into db fro db\Derived Column.Outputs[Derived Column Output].Columns[Education_3]"
+                      name="Education_3"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">[LEFT](#{Package\load into db fro db\OLE DB Source.Outputs[OLE DB Source Output].Columns[EDUCATION]},3)</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">LEFT(EDUCATION,3)</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\load into db fro db\Derived Column.Outputs[Derived Column Error Output]"
+                  description="Error Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Derived Column Error Output"
+                  synchronousInputId="Package\load into db fro db\Derived Column.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\load into db fro db\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\load into db fro db\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\load into db fro db\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\load into db fro db\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\load into db fro db\OLE DB Destination"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="OLE DB Destination"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[OLE DB Destination]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">true</property>
                 <property
                   dataType="System.String"
                   description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
@@ -225,58 +1210,700 @@
               </properties>
               <connections>
                 <connection
-                  refId="Package\Sales Data\LOAD INTO DB.Connections[OleDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[VINESH.AdventureWorks2022 1]"
-                  connectionManagerRefId="Package.ConnectionManagers[VINESH.AdventureWorks2022 1]"
+                  refId="Package\load into db fro db\OLE DB Destination.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[VINESH.SSIS1]"
+                  connectionManagerRefId="Package.ConnectionManagers[VINESH.SSIS1]"
                   description="The OLE DB runtime connection used to access the database."
                   name="OleDbConnection" />
               </connections>
               <inputs>
                 <input
-                  refId="Package\Sales Data\LOAD INTO DB.Inputs[OLE DB Destination Input]"
+                  refId="Package\load into db fro db\OLE DB Destination.Inputs[OLE DB Destination Input]"
                   errorOrTruncationOperation="Insert"
                   errorRowDisposition="FailComponent"
                   hasSideEffects="true"
                   name="OLE DB Destination Input">
                   <inputColumns>
                     <inputColumn
-                      refId="Package\Sales Data\LOAD INTO DB.Inputs[OLE DB Destination Input].Columns[917051316357]"
+                      refId="Package\load into db fro db\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[AGE]"
                       cachedCodepage="1252"
                       cachedDataType="str"
                       cachedLength="50"
-                      cachedName="917051316357"
-                      externalMetadataColumnId="Package\Sales Data\LOAD INTO DB.Inputs[OLE DB Destination Input].ExternalColumns[number]"
-                      lineageId="Package\Sales Data\COntact Number.Outputs[Flat File Source Output].Columns[917051316357]" />
+                      cachedName="AGE"
+                      externalMetadataColumnId="Package\load into db fro db\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[AGE]"
+                      lineageId="Package\load into db fro db\OLE DB Source.Outputs[OLE DB Source Output].Columns[AGE]" />
+                    <inputColumn
+                      refId="Package\load into db fro db\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[WORKCLASS]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="WORKCLASS"
+                      externalMetadataColumnId="Package\load into db fro db\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[WORKCLASS]"
+                      lineageId="Package\load into db fro db\OLE DB Source.Outputs[OLE DB Source Output].Columns[WORKCLASS]" />
+                    <inputColumn
+                      refId="Package\load into db fro db\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[FNLWGT]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="FNLWGT"
+                      externalMetadataColumnId="Package\load into db fro db\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[FNLWGT]"
+                      lineageId="Package\load into db fro db\OLE DB Source.Outputs[OLE DB Source Output].Columns[FNLWGT]" />
+                    <inputColumn
+                      refId="Package\load into db fro db\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[EDUCATION]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="EDUCATION"
+                      externalMetadataColumnId="Package\load into db fro db\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[EDUCATION]"
+                      lineageId="Package\load into db fro db\OLE DB Source.Outputs[OLE DB Source Output].Columns[EDUCATION]" />
+                    <inputColumn
+                      refId="Package\load into db fro db\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[EDUCATION NUM]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="EDUCATION NUM"
+                      externalMetadataColumnId="Package\load into db fro db\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[EDUCATION NUM]"
+                      lineageId="Package\load into db fro db\OLE DB Source.Outputs[OLE DB Source Output].Columns[EDUCATION NUM]" />
+                    <inputColumn
+                      refId="Package\load into db fro db\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[MARITAL STATUS]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="MARITAL STATUS"
+                      externalMetadataColumnId="Package\load into db fro db\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[MARITAL STATUS]"
+                      lineageId="Package\load into db fro db\OLE DB Source.Outputs[OLE DB Source Output].Columns[MARITAL STATUS]" />
+                    <inputColumn
+                      refId="Package\load into db fro db\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[OCCUPATION]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="OCCUPATION"
+                      externalMetadataColumnId="Package\load into db fro db\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[OCCUPATION]"
+                      lineageId="Package\load into db fro db\OLE DB Source.Outputs[OLE DB Source Output].Columns[OCCUPATION]" />
+                    <inputColumn
+                      refId="Package\load into db fro db\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[RELATIONSHIP]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="RELATIONSHIP"
+                      externalMetadataColumnId="Package\load into db fro db\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[RELATIONSHIP]"
+                      lineageId="Package\load into db fro db\OLE DB Source.Outputs[OLE DB Source Output].Columns[RELATIONSHIP]" />
+                    <inputColumn
+                      refId="Package\load into db fro db\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[RACE]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="RACE"
+                      externalMetadataColumnId="Package\load into db fro db\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[RACE]"
+                      lineageId="Package\load into db fro db\OLE DB Source.Outputs[OLE DB Source Output].Columns[RACE]" />
+                    <inputColumn
+                      refId="Package\load into db fro db\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[SEX]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="SEX"
+                      externalMetadataColumnId="Package\load into db fro db\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[SEX]"
+                      lineageId="Package\load into db fro db\OLE DB Source.Outputs[OLE DB Source Output].Columns[SEX]" />
+                    <inputColumn
+                      refId="Package\load into db fro db\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[CAPITAL GAIN]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="CAPITAL GAIN"
+                      externalMetadataColumnId="Package\load into db fro db\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[CAPITAL GAIN]"
+                      lineageId="Package\load into db fro db\OLE DB Source.Outputs[OLE DB Source Output].Columns[CAPITAL GAIN]" />
+                    <inputColumn
+                      refId="Package\load into db fro db\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[CAPITAL LOSS]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="CAPITAL LOSS"
+                      externalMetadataColumnId="Package\load into db fro db\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[CAPITAL LOSS]"
+                      lineageId="Package\load into db fro db\OLE DB Source.Outputs[OLE DB Source Output].Columns[CAPITAL LOSS]" />
+                    <inputColumn
+                      refId="Package\load into db fro db\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[HOURS PER WEEK]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="HOURS PER WEEK"
+                      externalMetadataColumnId="Package\load into db fro db\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[HOURS PER WEEK]"
+                      lineageId="Package\load into db fro db\OLE DB Source.Outputs[OLE DB Source Output].Columns[HOURS PER WEEK]" />
+                    <inputColumn
+                      refId="Package\load into db fro db\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[NATIVE COUNTRY]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="NATIVE COUNTRY"
+                      externalMetadataColumnId="Package\load into db fro db\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[NATIVE COUNTRY]"
+                      lineageId="Package\load into db fro db\OLE DB Source.Outputs[OLE DB Source Output].Columns[NATIVE COUNTRY]" />
+                    <inputColumn
+                      refId="Package\load into db fro db\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Education_3]"
+                      cachedDataType="wstr"
+                      cachedLength="3"
+                      cachedName="Education_3"
+                      externalMetadataColumnId="Package\load into db fro db\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Education__3]"
+                      lineageId="Package\load into db fro db\Derived Column.Outputs[Derived Column Output].Columns[Education_3]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
                     <externalMetadataColumn
-                      refId="Package\Sales Data\LOAD INTO DB.Inputs[OLE DB Destination Input].ExternalColumns[number]"
+                      refId="Package\load into db fro db\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[AGE]"
                       codePage="1252"
                       dataType="str"
-                      length="90"
-                      name="number" />
+                      length="50"
+                      name="AGE" />
+                    <externalMetadataColumn
+                      refId="Package\load into db fro db\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[WORKCLASS]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="WORKCLASS" />
+                    <externalMetadataColumn
+                      refId="Package\load into db fro db\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[FNLWGT]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="FNLWGT" />
+                    <externalMetadataColumn
+                      refId="Package\load into db fro db\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[EDUCATION]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="EDUCATION" />
+                    <externalMetadataColumn
+                      refId="Package\load into db fro db\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[EDUCATION NUM]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="EDUCATION NUM" />
+                    <externalMetadataColumn
+                      refId="Package\load into db fro db\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[MARITAL STATUS]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="MARITAL STATUS" />
+                    <externalMetadataColumn
+                      refId="Package\load into db fro db\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[OCCUPATION]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="OCCUPATION" />
+                    <externalMetadataColumn
+                      refId="Package\load into db fro db\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[RELATIONSHIP]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="RELATIONSHIP" />
+                    <externalMetadataColumn
+                      refId="Package\load into db fro db\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[RACE]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="RACE" />
+                    <externalMetadataColumn
+                      refId="Package\load into db fro db\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[SEX]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="SEX" />
+                    <externalMetadataColumn
+                      refId="Package\load into db fro db\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[CAPITAL GAIN]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="CAPITAL GAIN" />
+                    <externalMetadataColumn
+                      refId="Package\load into db fro db\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[CAPITAL LOSS]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="CAPITAL LOSS" />
+                    <externalMetadataColumn
+                      refId="Package\load into db fro db\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[HOURS PER WEEK]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="HOURS PER WEEK" />
+                    <externalMetadataColumn
+                      refId="Package\load into db fro db\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[NATIVE COUNTRY]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="NATIVE COUNTRY" />
+                    <externalMetadataColumn
+                      refId="Package\load into db fro db\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Education__3]"
+                      dataType="wstr"
+                      length="3"
+                      name="Education__3" />
                   </externalMetadataColumns>
                 </input>
               </inputs>
               <outputs>
                 <output
-                  refId="Package\Sales Data\LOAD INTO DB.Outputs[OLE DB Destination Error Output]"
+                  refId="Package\load into db fro db\OLE DB Destination.Outputs[OLE DB Destination Error Output]"
                   exclusionGroup="1"
                   isErrorOut="true"
                   name="OLE DB Destination Error Output"
-                  synchronousInputId="Package\Sales Data\LOAD INTO DB.Inputs[OLE DB Destination Input]">
+                  synchronousInputId="Package\load into db fro db\OLE DB Destination.Inputs[OLE DB Destination Input]">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\Sales Data\LOAD INTO DB.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      refId="Package\load into db fro db\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
                       dataType="i4"
-                      lineageId="Package\Sales Data\LOAD INTO DB.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      lineageId="Package\load into db fro db\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
                       name="ErrorCode"
                       specialFlags="1" />
                     <outputColumn
-                      refId="Package\Sales Data\LOAD INTO DB.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      refId="Package\load into db fro db\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
                       dataType="i4"
-                      lineageId="Package\Sales Data\LOAD INTO DB.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      lineageId="Package\load into db fro db\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\load into db fro db\OLE DB Source"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+              description="OLE DB Source"
+              name="OLE DB Source"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[OLE DB Destination]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\load into db fro db\OLE DB Source.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[Vinesh.SSIS]"
+                  connectionManagerRefId="Package.ConnectionManagers[Vinesh.SSIS]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\load into db fro db\OLE DB Source.Outputs[OLE DB Source Output]"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\load into db fro db\OLE DB Source.Outputs[OLE DB Source Output].Columns[AGE]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\load into db fro db\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[AGE]"
+                      length="50"
+                      lineageId="Package\load into db fro db\OLE DB Source.Outputs[OLE DB Source Output].Columns[AGE]"
+                      name="AGE"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\load into db fro db\OLE DB Source.Outputs[OLE DB Source Output].Columns[WORKCLASS]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\load into db fro db\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[WORKCLASS]"
+                      length="50"
+                      lineageId="Package\load into db fro db\OLE DB Source.Outputs[OLE DB Source Output].Columns[WORKCLASS]"
+                      name="WORKCLASS"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\load into db fro db\OLE DB Source.Outputs[OLE DB Source Output].Columns[FNLWGT]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\load into db fro db\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[FNLWGT]"
+                      length="50"
+                      lineageId="Package\load into db fro db\OLE DB Source.Outputs[OLE DB Source Output].Columns[FNLWGT]"
+                      name="FNLWGT"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\load into db fro db\OLE DB Source.Outputs[OLE DB Source Output].Columns[EDUCATION]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\load into db fro db\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[EDUCATION]"
+                      length="50"
+                      lineageId="Package\load into db fro db\OLE DB Source.Outputs[OLE DB Source Output].Columns[EDUCATION]"
+                      name="EDUCATION"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\load into db fro db\OLE DB Source.Outputs[OLE DB Source Output].Columns[EDUCATION NUM]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\load into db fro db\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[EDUCATION NUM]"
+                      length="50"
+                      lineageId="Package\load into db fro db\OLE DB Source.Outputs[OLE DB Source Output].Columns[EDUCATION NUM]"
+                      name="EDUCATION NUM"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\load into db fro db\OLE DB Source.Outputs[OLE DB Source Output].Columns[MARITAL STATUS]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\load into db fro db\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[MARITAL STATUS]"
+                      length="50"
+                      lineageId="Package\load into db fro db\OLE DB Source.Outputs[OLE DB Source Output].Columns[MARITAL STATUS]"
+                      name="MARITAL STATUS"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\load into db fro db\OLE DB Source.Outputs[OLE DB Source Output].Columns[OCCUPATION]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\load into db fro db\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[OCCUPATION]"
+                      length="50"
+                      lineageId="Package\load into db fro db\OLE DB Source.Outputs[OLE DB Source Output].Columns[OCCUPATION]"
+                      name="OCCUPATION"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\load into db fro db\OLE DB Source.Outputs[OLE DB Source Output].Columns[RELATIONSHIP]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\load into db fro db\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[RELATIONSHIP]"
+                      length="50"
+                      lineageId="Package\load into db fro db\OLE DB Source.Outputs[OLE DB Source Output].Columns[RELATIONSHIP]"
+                      name="RELATIONSHIP"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\load into db fro db\OLE DB Source.Outputs[OLE DB Source Output].Columns[RACE]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\load into db fro db\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[RACE]"
+                      length="50"
+                      lineageId="Package\load into db fro db\OLE DB Source.Outputs[OLE DB Source Output].Columns[RACE]"
+                      name="RACE"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\load into db fro db\OLE DB Source.Outputs[OLE DB Source Output].Columns[SEX]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\load into db fro db\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[SEX]"
+                      length="50"
+                      lineageId="Package\load into db fro db\OLE DB Source.Outputs[OLE DB Source Output].Columns[SEX]"
+                      name="SEX"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\load into db fro db\OLE DB Source.Outputs[OLE DB Source Output].Columns[CAPITAL GAIN]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\load into db fro db\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[CAPITAL GAIN]"
+                      length="50"
+                      lineageId="Package\load into db fro db\OLE DB Source.Outputs[OLE DB Source Output].Columns[CAPITAL GAIN]"
+                      name="CAPITAL GAIN"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\load into db fro db\OLE DB Source.Outputs[OLE DB Source Output].Columns[CAPITAL LOSS]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\load into db fro db\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[CAPITAL LOSS]"
+                      length="50"
+                      lineageId="Package\load into db fro db\OLE DB Source.Outputs[OLE DB Source Output].Columns[CAPITAL LOSS]"
+                      name="CAPITAL LOSS"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\load into db fro db\OLE DB Source.Outputs[OLE DB Source Output].Columns[HOURS PER WEEK]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\load into db fro db\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[HOURS PER WEEK]"
+                      length="50"
+                      lineageId="Package\load into db fro db\OLE DB Source.Outputs[OLE DB Source Output].Columns[HOURS PER WEEK]"
+                      name="HOURS PER WEEK"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\load into db fro db\OLE DB Source.Outputs[OLE DB Source Output].Columns[NATIVE COUNTRY]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\load into db fro db\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[NATIVE COUNTRY]"
+                      length="50"
+                      lineageId="Package\load into db fro db\OLE DB Source.Outputs[OLE DB Source Output].Columns[NATIVE COUNTRY]"
+                      name="NATIVE COUNTRY"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\load into db fro db\OLE DB Source.Outputs[OLE DB Source Output].Columns[TARGET]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\load into db fro db\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[TARGET]"
+                      length="50"
+                      lineageId="Package\load into db fro db\OLE DB Source.Outputs[OLE DB Source Output].Columns[TARGET]"
+                      name="TARGET"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\load into db fro db\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[AGE]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="AGE" />
+                    <externalMetadataColumn
+                      refId="Package\load into db fro db\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[WORKCLASS]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="WORKCLASS" />
+                    <externalMetadataColumn
+                      refId="Package\load into db fro db\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[FNLWGT]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="FNLWGT" />
+                    <externalMetadataColumn
+                      refId="Package\load into db fro db\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[EDUCATION]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="EDUCATION" />
+                    <externalMetadataColumn
+                      refId="Package\load into db fro db\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[EDUCATION NUM]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="EDUCATION NUM" />
+                    <externalMetadataColumn
+                      refId="Package\load into db fro db\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[MARITAL STATUS]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="MARITAL STATUS" />
+                    <externalMetadataColumn
+                      refId="Package\load into db fro db\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[OCCUPATION]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="OCCUPATION" />
+                    <externalMetadataColumn
+                      refId="Package\load into db fro db\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[RELATIONSHIP]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="RELATIONSHIP" />
+                    <externalMetadataColumn
+                      refId="Package\load into db fro db\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[RACE]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="RACE" />
+                    <externalMetadataColumn
+                      refId="Package\load into db fro db\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[SEX]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="SEX" />
+                    <externalMetadataColumn
+                      refId="Package\load into db fro db\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[CAPITAL GAIN]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="CAPITAL GAIN" />
+                    <externalMetadataColumn
+                      refId="Package\load into db fro db\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[CAPITAL LOSS]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="CAPITAL LOSS" />
+                    <externalMetadataColumn
+                      refId="Package\load into db fro db\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[HOURS PER WEEK]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="HOURS PER WEEK" />
+                    <externalMetadataColumn
+                      refId="Package\load into db fro db\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[NATIVE COUNTRY]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="NATIVE COUNTRY" />
+                    <externalMetadataColumn
+                      refId="Package\load into db fro db\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[TARGET]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="TARGET" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\load into db fro db\OLE DB Source.Outputs[OLE DB Source Error Output]"
+                  isErrorOut="true"
+                  name="OLE DB Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\load into db fro db\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[AGE]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\load into db fro db\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[AGE]"
+                      name="AGE" />
+                    <outputColumn
+                      refId="Package\load into db fro db\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[WORKCLASS]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\load into db fro db\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[WORKCLASS]"
+                      name="WORKCLASS" />
+                    <outputColumn
+                      refId="Package\load into db fro db\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[FNLWGT]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\load into db fro db\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[FNLWGT]"
+                      name="FNLWGT" />
+                    <outputColumn
+                      refId="Package\load into db fro db\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[EDUCATION]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\load into db fro db\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[EDUCATION]"
+                      name="EDUCATION" />
+                    <outputColumn
+                      refId="Package\load into db fro db\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[EDUCATION NUM]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\load into db fro db\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[EDUCATION NUM]"
+                      name="EDUCATION NUM" />
+                    <outputColumn
+                      refId="Package\load into db fro db\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[MARITAL STATUS]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\load into db fro db\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[MARITAL STATUS]"
+                      name="MARITAL STATUS" />
+                    <outputColumn
+                      refId="Package\load into db fro db\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[OCCUPATION]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\load into db fro db\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[OCCUPATION]"
+                      name="OCCUPATION" />
+                    <outputColumn
+                      refId="Package\load into db fro db\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[RELATIONSHIP]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\load into db fro db\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[RELATIONSHIP]"
+                      name="RELATIONSHIP" />
+                    <outputColumn
+                      refId="Package\load into db fro db\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[RACE]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\load into db fro db\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[RACE]"
+                      name="RACE" />
+                    <outputColumn
+                      refId="Package\load into db fro db\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[SEX]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\load into db fro db\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[SEX]"
+                      name="SEX" />
+                    <outputColumn
+                      refId="Package\load into db fro db\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[CAPITAL GAIN]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\load into db fro db\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[CAPITAL GAIN]"
+                      name="CAPITAL GAIN" />
+                    <outputColumn
+                      refId="Package\load into db fro db\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[CAPITAL LOSS]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\load into db fro db\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[CAPITAL LOSS]"
+                      name="CAPITAL LOSS" />
+                    <outputColumn
+                      refId="Package\load into db fro db\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[HOURS PER WEEK]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\load into db fro db\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[HOURS PER WEEK]"
+                      name="HOURS PER WEEK" />
+                    <outputColumn
+                      refId="Package\load into db fro db\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[NATIVE COUNTRY]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\load into db fro db\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[NATIVE COUNTRY]"
+                      name="NATIVE COUNTRY" />
+                    <outputColumn
+                      refId="Package\load into db fro db\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[TARGET]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\load into db fro db\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[TARGET]"
+                      name="TARGET" />
+                    <outputColumn
+                      refId="Package\load into db fro db\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\load into db fro db\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\load into db fro db\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\load into db fro db\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
                       name="ErrorColumn"
                       specialFlags="2" />
                   </outputColumns>
@@ -287,15 +1914,46 @@
           </components>
           <paths>
             <path
-              refId="Package\Sales Data.Paths[Flat File Source Output]"
-              endId="Package\Sales Data\LOAD INTO DB.Inputs[OLE DB Destination Input]"
-              name="Flat File Source Output"
-              startId="Package\Sales Data\COntact Number.Outputs[Flat File Source Output]" />
+              refId="Package\load into db fro db.Paths[Derived Column Output]"
+              endId="Package\load into db fro db\OLE DB Destination.Inputs[OLE DB Destination Input]"
+              name="Derived Column Output"
+              startId="Package\load into db fro db\Derived Column.Outputs[Derived Column Output]" />
+            <path
+              refId="Package\load into db fro db.Paths[OLE DB Source Output]"
+              endId="Package\load into db fro db\Derived Column.Inputs[Derived Column Input]"
+              name="OLE DB Source Output"
+              startId="Package\load into db fro db\OLE DB Source.Outputs[OLE DB Source Output]" />
           </paths>
         </pipeline>
       </DTS:ObjectData>
     </DTS:Executable>
   </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint]"
+      DTS:CreationName=""
+      DTS:DTSID="{230764F2-BD3B-496F-8093-DE6C5A8AA21B}"
+      DTS:From="Package\Delete Task"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint"
+      DTS:To="Package\load into db fro db" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 1]"
+      DTS:CreationName=""
+      DTS:DTSID="{B7CC956E-DAB3-4340-8316-51A8293291B9}"
+      DTS:From="Package\Delete Rows"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 1"
+      DTS:To="Package\Data Flow Task" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 2]"
+      DTS:CreationName=""
+      DTS:DTSID="{BF8B4089-CC4C-4E38-9B6A-E0B4BBCD8B8E}"
+      DTS:From="Package\Data Flow Task"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 2"
+      DTS:To="Package\load into db fro db" />
+  </DTS:PrecedenceConstraints>
   <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
 <!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
 <!--If you manually edit this section and make a mistake, you can delete it. -->
@@ -307,53 +1965,155 @@
     design-time-name="Package">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="128,41.6"
-          Id="Package\Sales Data"
-          TopLeft="42.1428572325683,17.5882352787009" />
-      </GraphLayout>
-    </LayoutInfo>
-  </Package>
-  <TaskHost
-    design-time-name="Package\Sales Data">
-    <LayoutInfo>
-      <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+          Size="150.4,41.6"
+          Id="Package\Data Flow Task"
+          TopLeft="48.3571429483745,109.61764696756" />
         <NodeLayout
-          Size="156.8,41.6"
-          Id="Package\Sales Data\COntact Number"
-          TopLeft="5.5,5.5" />
+          Size="165.6,41.6"
+          Id="Package\load into db fro db"
+          TopLeft="248.626374155634,117.268907460234" />
         <NodeLayout
-          Size="149.6,41.6"
-          Id="Package\Sales Data\LOAD INTO DB"
-          TopLeft="19.7857142522627,96.6764705346117" />
+          Size="133.6,41.6"
+          Id="Package\Delete Task"
+          TopLeft="233.516484013579,27.0588235056936" />
         <EdgeLayout
-          Id="Package\Sales Data.Paths[Flat File Source Output]"
-          TopLeft="83.9,47.1">
+          Id="Package.PrecedenceConstraints[Constraint]"
+          TopLeft="300.316484013579,68.6588235056936">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="10.6857142522627,49.5764705346117"
+              EndConnector="31.1098901420548,48.6100839545407"
               Start="0,0"
-              End="10.6857142522627,42.0764705346117">
+              End="31.1098901420548,41.1100839545407">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,20.7882352673059" />
+                    End="0,20.3050419772704" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,20.7882352673059"
-                    Point2="0,24.7882352673059"
-                    Point3="4,24.7882352673059" />
+                    Point1="0,20.3050419772704"
+                    Point2="0,24.3050419772704"
+                    Point3="4,24.3050419772704" />
                   <mssgle:LineSegment
-                    End="6.68571425226271,24.7882352673059" />
+                    End="27.1098901420548,24.3050419772704" />
                   <mssgle:CubicBezierSegment
-                    Point1="6.68571425226271,24.7882352673059"
-                    Point2="10.6857142522627,24.7882352673059"
-                    Point3="10.6857142522627,28.7882352673059" />
+                    Point1="27.1098901420548,24.3050419772704"
+                    Point2="31.1098901420548,24.3050419772704"
+                    Point3="31.1098901420548,28.3050419772704" />
                   <mssgle:LineSegment
-                    End="10.6857142522627,42.0764705346117" />
+                    End="31.1098901420548,41.1100839545407" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="136.8,41.6"
+          Id="Package\Delete Rows"
+          TopLeft="42.3076923977543,22.9411764504794" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 1]"
+          TopLeft="110.707692397754,64.5411764504794">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="12.8494505506202,45.0764705170809"
+              Start="0,0"
+              End="12.8494505506202,37.5764705170809">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,18.5382352585405" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,18.5382352585405"
+                    Point2="0,22.5382352585405"
+                    Point3="4,22.5382352585405" />
+                  <mssgle:LineSegment
+                    End="8.84945055062019,22.5382352585405" />
+                  <mssgle:CubicBezierSegment
+                    Point1="8.84945055062019,22.5382352585405"
+                    Point2="12.8494505506202,22.5382352585405"
+                    Point3="12.8494505506202,26.5382352585405" />
+                  <mssgle:LineSegment
+                    End="12.8494505506202,37.5764705170809" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 2]"
+          TopLeft="198.757142948375,134.243277213897">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="49.8692312072591,0"
+              Start="0,0"
+              End="42.3692312072591,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="42.3692312072591,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\Data Flow Task">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="150.4,41.6"
+          Id="Package\Data Flow Task\Flat File Source"
+          TopLeft="115.999998271465,25.9999996125698" />
+        <NodeLayout
+          Size="170.4,41.6"
+          Id="Package\Data Flow Task\OLE DB Destination"
+          TopLeft="144.499997928739,99.4999985992909" />
+        <EdgeLayout
+          Id="Package\Data Flow Task.Paths[Flat File Source Output]"
+          TopLeft="191.199998271465,67.5999996125698">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="38.499999657274,31.8999989867211"
+              Start="0,0"
+              End="38.499999657274,24.3999989867211">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,11.9499994933606" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,11.9499994933606"
+                    Point2="0,15.9499994933606"
+                    Point3="4,15.9499994933606" />
+                  <mssgle:LineSegment
+                    End="34.499999657274,15.9499994933606" />
+                  <mssgle:CubicBezierSegment
+                    Point1="34.499999657274,15.9499994933606"
+                    Point2="38.499999657274,15.9499994933606"
+                    Point3="38.499999657274,19.9499994933606" />
+                  <mssgle:LineSegment
+                    End="38.499999657274,24.3999989867211" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -366,7 +2126,121 @@
     </LayoutInfo>
   </TaskHost>
   <PipelineComponentMetadata
-    design-time-name="Package\Sales Data\LOAD INTO DB">
+    design-time-name="Package\Data Flow Task\OLE DB Destination">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <TaskHost
+    design-time-name="Package\load into db fro db">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="170.4,41.6"
+          Id="Package\load into db fro db\OLE DB Destination"
+          TopLeft="252.333329573274,384.33332760632" />
+        <NodeLayout
+          Size="149.6,41.6"
+          Id="Package\load into db fro db\OLE DB Source"
+          TopLeft="5.5,176.143093922652" />
+        <NodeLayout
+          Size="152.8,41.6"
+          Id="Package\load into db fro db\Derived Column"
+          TopLeft="86.1538448700538,285.846151439043" />
+        <EdgeLayout
+          Id="Package\load into db fro db.Paths[OLE DB Source Output]"
+          TopLeft="80.3,217.743093922652">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="82.2538448700538,68.1030575163912"
+              Start="0,0"
+              End="82.2538448700538,60.6030575163912">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,30.0515287581956" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,30.0515287581956"
+                    Point2="0,34.0515287581956"
+                    Point3="4,34.0515287581956" />
+                  <mssgle:LineSegment
+                    End="78.2538448700538,34.0515287581956" />
+                  <mssgle:CubicBezierSegment
+                    Point1="78.2538448700538,34.0515287581956"
+                    Point2="82.2538448700538,34.0515287581956"
+                    Point3="82.2538448700538,38.0515287581956" />
+                  <mssgle:LineSegment
+                    End="82.2538448700538,60.6030575163912" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\load into db fro db.Paths[Derived Column Output]"
+          TopLeft="162.553844870054,327.446151439043">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="174.97948470322,56.8871761672769"
+              Start="0,0"
+              End="174.97948470322,49.3871761672769">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,24.4435880836384" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,24.4435880836384"
+                    Point2="0,28.4435880836384"
+                    Point3="4,28.4435880836384" />
+                  <mssgle:LineSegment
+                    End="170.97948470322,28.4435880836384" />
+                  <mssgle:CubicBezierSegment
+                    Point1="170.97948470322,28.4435880836384"
+                    Point2="174.97948470322,28.4435880836384"
+                    Point3="174.97948470322,32.4435880836384" />
+                  <mssgle:LineSegment
+                    End="174.97948470322,49.3871761672769" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\load into db fro db\OLE DB Destination">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\load into db fro db\OLE DB Source">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
