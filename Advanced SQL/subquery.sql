@@ -63,8 +63,14 @@ from EMPLOYEE_DETAILS where DEPT =
 
 ---Find employees who have more experience than the average experience in their department.
 
-select *
-from EMPLOYEE_DETAILS E where Experience >(select AVG(Experience) from EMPLOYEE_DETAILS where DEPT =E.DEPT)
+select * from EMPLOYEE_DETAILS  where Experience >
+(select AVG(Experience) from EMPLOYEE_DETAILS )
+
+select * from EMPLOYEE_DETAILS
+
+select avg(Experience) from EMPLOYEE_DETAILS
+
+
 
 
 --Retrieve the department(s) with the highest total salary expense.

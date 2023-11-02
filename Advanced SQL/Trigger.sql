@@ -1,6 +1,7 @@
 USE TRIGER
 
-
+select name
+from sys.tables
 CREATE TABLE [dbo].[Account](
     [AccountID] [int] NOT NULL,
     [AccountHolderName] [nvarchar](255) NULL,
@@ -177,7 +178,7 @@ END;
 EXEC RecordTransaction
     @AccountID = 2,            -- Actual AccountID
     @TransactionType = 'DEBIT', -- Specify 'Credit' for DEBIT transactions
-    @Amount = 1000.00,
+    @Amount = 10000,
     @Remarks='NULL';
 
 	select * from Account
@@ -277,11 +278,11 @@ begin   ----IF yes then order as per below conditions
 update o  set day_date = getdate(),
 total_price = case
 when @category = 'pizza' 
-and datepart(weekday, cast(o.day_date as date)) in (3, 6) -- tuesday (3) and friday (6)
-and (o.quantity > 2 )
-and (o.quantity * p.price_per_unit > 500)
+and datepart(weekday,o.day_date) in (3, 6) -- tuesday (3) and friday (6)
+and (o.quantity >= 2 )
+and (o.quantity * p.price_per_unit >= 500)
 and o.mode_of_order = 'online'
-then (o.quantity * p.price_per_unit + s.[s_price++] * o.quantity) * 0.5 * 1.18 -- 50% discount and 18% gst
+then ((o.quantity * p.price_per_unit) + (s.[s_price++] * o.quantity)) * 0.5*1.18  -- 50% discount and 18% gst
 else (o.quantity * p.price_per_unit + s.[s_price++] * o.quantity) * 1.18 -- no discount, just 18% gst
 end
 from order_tbl o
@@ -318,14 +319,16 @@ select * from customer where contact_no = 8200857566 or email= 'somesh820@outloo
 
 ----To Insert Data Into Order Table
 
-insert into order_tbl (customer_id,product_id,Size_ID,mode_of_order,quantity) values (5003,2,105,'online',2)
+insert into order_tbl (customer_id,product_id,Size_ID,mode_of_order,quantity) 
+values (5001,4,102,'online',50000)
 
 ---------------------------------------------
+
+
 
 select * from size
 select * from product
 select * from order_tbl
 select * from customer
-
 
 
