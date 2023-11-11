@@ -1,104 +1,103 @@
-create database ppt
+-- Create a database named 'ppt'
+CREATE DATABASE ppt;
 
-use ppt
+-- Switch to the 'ppt' database
+USE ppt;
 
-select name
-from sys.tables
+-- Select table names from 'sys.tables'
+SELECT name
+FROM sys.tables;
 
-bulk insert Table1 from 'D:\New folder\table1.csv' with (format ='CSV', rowterminator = '\n', 
-firstrow = 2, fieldterminator = ',')
-bulk insert Table2 from 'D:\New folder\table2.csv' with (format ='CSV', rowterminator = '\n', 
-firstrow = 2, fieldterminator = ',')
+-- Bulk insert data from 'table1.csv' into Table1
+BULK INSERT Table1 FROM 'D:\New folder\table1.csv' WITH (FORMAT = 'CSV', ROWTERMINATOR = '\n', FIRSTROW = 2, FIELDTERMINATOR = ',');
 
-select * from Table1
-select * from Table2
+-- Bulk insert data from 'table2.csv' into Table2
+BULK INSERT Table2 FROM 'D:\New folder\table2.csv' WITH (FORMAT = 'CSV', ROWTERMINATOR = '\n', FIRSTROW = 2, FIELDTERMINATOR = ',');
 
---- Left Join
+-- Select all data from Table1
+SELECT * FROM Table1;
 
-SELECT A.Enrolment_ID, B.Name, b.Obtained_Marks
+-- Select all data from Table2
+SELECT * FROM Table2;
+
+-- Left Join: Retrieve data from Table1 and Table2 based on Enrolment_ID
+SELECT A.Enrolment_ID, B.Name, B.Obtained_Marks
 FROM Table1 A
-left JOIN Table2 B
-ON A.Enrolment_ID=b.Enrolment_ID
+LEFT JOIN Table2 B ON A.Enrolment_ID = B.Enrolment_ID;
 
----------LEFT Outer Join
-
-SELECT A.Enrolment_ID, B.Name, b.Obtained_Marks
+-- Left Outer Join: Retrieve data from Table1 and Table2 where Enrolment_ID is null in Table2
+SELECT A.Enrolment_ID, B.Name, B.Obtained_Marks
 FROM Table1 A
-left JOIN Table2 B
-ON A.Enrolment_ID=b.Enrolment_ID
-where B.Enrolment_ID is null
+LEFT JOIN Table2 B ON A.Enrolment_ID = B.Enrolment_ID
+WHERE B.Enrolment_ID IS NULL;
 
------Right Join
-
-SELECT A.Enrolment_ID, B.Name, b.Obtained_Marks
+-- Right Join: Retrieve data from Table1 and Table2 based on Enrolment_ID
+SELECT A.Enrolment_ID, B.Name, B.Obtained_Marks
 FROM Table1 A
-right JOIN Table2 B
-ON A.Enrolment_ID=b.Enrolment_ID
+RIGHT JOIN Table2 B ON A.Enrolment_ID = B.Enrolment_ID;
 
------Right Outer Join
-SELECT A.Enrolment_ID, B.Name, b.Obtained_Marks
+-- Right Outer Join: Retrieve data from Table1 and Table2 where Enrolment_ID is null in Table1
+SELECT A.Enrolment_ID, B.Name, B.Obtained_Marks
 FROM Table1 A
-right JOIN Table2 B
-ON A.Enrolment_ID=b.Enrolment_ID
-where A.Enrolment_ID is null
+RIGHT JOIN Table2 B ON A.Enrolment_ID = B.Enrolment_ID
+WHERE A.Enrolment_ID IS NULL;
 
------ FUll Join OUTER
-
-SELECT A.Enrolment_ID, B.Name, b.Obtained_Marks
+-- Full Outer Join: Retrieve data from Table1 and Table2 based on Enrolment_ID
+SELECT A.Enrolment_ID, B.Name, B.Obtained_Marks
 FROM Table1 A
-full outer JOIN Table2 B
-ON A.Enrolment_ID=b.Enrolment_ID
---- FULL JOIN
-SELECT A.Enrolment_ID, B.Name, b.Obtained_Marks
+FULL OUTER JOIN Table2 B ON A.Enrolment_ID = B.Enrolment_ID;
+
+-- Full Join: Retrieve data from Table1 and Table2 based on Enrolment_ID
+SELECT A.Enrolment_ID, B.Name, B.Obtained_Marks
 FROM Table1 A
-full JOIN Table2 B
-ON A.Enrolment_ID=b.Enrolment_ID
+FULL JOIN Table2 B ON A.Enrolment_ID = B.Enrolment_ID;
 
-
-
---- INNER JOIN
-SELECT A.Enrolment_ID, B.Name, b.Obtained_Marks
+-- Inner Join: Retrieve data from Table1 and Table2 based on Enrolment_ID
+SELECT A.Enrolment_ID, B.Name, B.Obtained_Marks
 FROM Table1 A
-Inner JOIN Table2 B
-ON A.Enrolment_ID=b.Enrolment_ID
+INNER JOIN Table2 B ON A.Enrolment_ID = B.Enrolment_ID;
 
-
-create table Boarding_Pass(
-Ticket_ID int,
-Name nvarchar(50),
-Seat_No int,
-Class nvarchar(50)
+-- Create a table 'Boarding_Pass' to store boarding pass information
+CREATE TABLE Boarding_Pass (
+    Ticket_ID INT,
+    Name NVARCHAR(50),
+    Seat_No INT,
+    Class NVARCHAR(50)
 );
 
-bulk insert Seats from 'D:\New folder\Seats.csv' with (fieldterminator =',', rowterminator ='\n', format = 'CSV', firstrow =2)
+-- Bulk insert data from 'Seats.csv' into the 'Seats' table
+BULK INSERT Seats FROM 'D:\New folder\Seats.csv' WITH (FIELDTERMINATOR = ',', ROWTERMINATOR = '\n', FORMAT = 'CSV', FIRSTROW = 2);
 
-create table Ticket_No(
-Ticket_ID int,
-Seat_No int
+-- Create a table 'Ticket_No' to store ticket numbers
+CREATE TABLE Ticket_No (
+    Ticket_ID INT,
+    Seat_No INT
 );
 
-create table Seats(
-Ticket_ID int,
-Seat_No int,
-Class nvarchar(50)
+-- Create a table 'Seats' to store seat information
+CREATE TABLE Seats (
+    Ticket_ID INT,
+    Seat_No INT,
+    Class NVARCHAR(50)
 );
 
-select * from Seats
-select * from Ticket_No
-select * from Boarding_Pass
+-- Select all data from 'Seats'
+SELECT * FROM Seats;
 
+-- Select all data from 'Ticket_No'
+SELECT * FROM Ticket_No;
 
---airline company wants to understand they are selling most of the tickets
---- list of ticket having no boarding pass
+-- Select all data from 'Boarding_Pass'
+SELECT * FROM Boarding_Pass;
 
-select b.Class,  count(*) as Ticket_Count
-from Boarding_Pass B
-Join Seats S
-on s.Ticket_ID= b.Ticket_ID
-group by s.Class, b.Class 
+-- Retrieve a list of ticket classes and their count where no boarding pass exists
+SELECT B.Class, COUNT(*) AS Ticket_Count
+FROM Boarding_Pass B
+JOIN Seats S ON S.Ticket_ID = B.Ticket_ID
+GROUP BY S.Class, B.Class;
 
-select b.Ticket_ID,t.Ticket_ID
-from Ticket_No T
-right join Boarding_Pass B
-on t.Ticket_ID=b.Ticket_ID
-where b.Ticket_ID is null
+-- Retrieve ticket IDs from 'Ticket_No' where no corresponding boarding pass exists
+SELECT B.Ticket_ID, T.Ticket_ID
+FROM Ticket_No T
+RIGHT JOIN Boarding_Pass B ON T.Ticket_ID = B.Ticket_ID
+WHERE B.Ticket_ID IS NULL;

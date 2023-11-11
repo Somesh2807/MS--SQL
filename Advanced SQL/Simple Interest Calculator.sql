@@ -1,21 +1,29 @@
-alter proc simple_calculator
-@principal_amount money, @ROI decimal(4,2), @Tenure int
-as 
-begin
-declare @simpleinterest money
-set @simpleinterest = @principal_amount * @roi * @tenure /100
-declare @total_amount money
-set @total_amount = @simpleinterest + @principal_amount
+---Use Rise Database
+USE rise2023
 
-declare @EMI_PER_Month int
-set @EMI_PER_Month = @total_amount/(12 * @tenure)
+CREATE OR ALTER PROC simple_calculator
+    @principalAmount MONEY,
+    @ROI DECIMAL(4,2),
+    @Tenure INT
+AS 
+BEGIN
+    DECLARE @simpleInterest MONEY
+    SET @simpleInterest = @principalAmount * @ROI * @Tenure / 100
 
-print concat('Principal amount of loan ', @principal_amount)
-print concat('Rate of interest of loan ', @ROI)
-print concat('Loan Tenure ', @Tenure)
-print concat('Interest amount of Loan ', @simpleinterest)
-print concat('Total Amount of loan ', @total_amount)
-print concat('Monthly EMI ', @EMI_PER_Month)
-end
+    DECLARE @totalAmount MONEY
+    SET @totalAmount = @simpleInterest + @principalAmount
 
-simple_calculator @principal_amount = 1500000, @ROI = 8.85, @Tenure = 22
+    DECLARE @EMI_PER_Month INT
+    SET @EMI_PER_Month = @totalAmount / (12 * @Tenure)
+
+    PRINT 'Loan Details:'
+    PRINT CONCAT('Principal amount of loan: ', @principalAmount)
+    PRINT CONCAT('Rate of interest of loan: ', @ROI)
+    PRINT CONCAT('Loan Tenure: ', @Tenure)
+    PRINT CONCAT('Interest amount of Loan: ', @simpleInterest)
+    PRINT CONCAT('Total Amount of loan: ', @totalAmount)
+    PRINT CONCAT('Monthly EMI: ', @EMI_PER_Month)
+END
+
+-- Example: Execute the stored procedure with sample values
+EXEC simple_calculator @principalAmount = 1500000, @ROI = 8.85, @Tenure = 22

@@ -1,126 +1,80 @@
-create database Rise
-Use RISE
-Go
+-- Create a new database named "Rise"
+CREATE DATABASE Rise;
+-- Use the "Rise" database
+USE RISE;
+-- Go to the next batch of statements
 
+-- Create table "BoardingPass"
+CREATE TABLE BoardingPass (
+    Tid NVARCHAR(5),
+    Name NVARCHAR(20),
+    Seat NVARCHAR(10),
+    Class NVARCHAR(20)
+);
 
+-- Create table "TicketNo"
+CREATE TABLE TicketNo (
+    Tid NVARCHAR(5),
+    Seat NVARCHAR(10)
+);
 
+-- Create table "Seats"
+CREATE TABLE Seats (
+    Tid NVARCHAR(5),
+    Seat NVARCHAR(10),
+    Class NVARCHAR(20)
+);
 
+-- Insert data into "BoardingPass"
+INSERT INTO BoardingPass VALUES ('B1', 'Aman', 'S1', 'Business Class');
+INSERT INTO BoardingPass VALUES ('B2', 'Dhruvesh', 'S3', 'General Class');
+INSERT INTO BoardingPass (Tid, Name) VALUES ('B3', 'Meshva');
+INSERT INTO BoardingPass VALUES ('B4', 'Jignesh', 'S6', 'Semi-Eco Class');
+INSERT INTO BoardingPass (Tid, Name) VALUES ('B5', 'Vishal');
 
-Create table BoardingPass(
-Tid nvarchar(5),
-Name nvarchar(20),
-Seat nvarchar(10),
-class nvarchar(20)
-)
+-- Select all records from "BoardingPass"
+SELECT * FROM BoardingPass;
 
+-- Select all records from "TicketNo"
+SELECT * FROM TicketNo;
 
+-- Select all records from "Seats"
+SELECT * FROM Seats;
 
+-- Insert data into "TicketNo"
+INSERT INTO TicketNo VALUES ('B1', 'S1');
+INSERT INTO TicketNo VALUES ('B2', 'S2');
+INSERT INTO TicketNo VALUES ('B3', 'S5');
+INSERT INTO TicketNo VALUES ('B6', 'S7');
+INSERT INTO TicketNo VALUES ('B7', 'S9');
 
-create table TicketNo(
-Tid nvarchar(5),
-Seat nvarchar(10)
-)
+-- Insert data into "Seats"
+INSERT INTO Seats VALUES ('B1', 'S1', 'Business Class');
+INSERT INTO Seats VALUES ('B4', 'S5', 'Economy Class');
+INSERT INTO Seats VALUES ('B7', 'S7', 'General Class');
+INSERT INTO Seats VALUES ('B11', 'S12', 'Business Class');
 
-
-
-
-create table Seats(
-Tid nvarchar(5),
-Seat nvarchar(10),
-Class nvarchar(20)
-)
-
-
-
-
-insert into BoardingPass values('B1','Aman','S1','Bussiness Class')
-insert into BoardingPass values('B2','Dhruvesh','S3','General Class')
-insert into BoardingPass(Tid,Name)values('B3','Meshva')
-insert into BoardingPass values('B4','Jignesh','S6',' Semi-Eco Class')
-insert into BoardingPass(Tid,Name)values('B5','Vishal')
-
-
-
-
-select *from BoardingPass
-select *from TicketNo
-select *from Seats
-
-
-
-
-insert into TicketNo values('B1','S1')
-insert into TicketNo values('B2','S2')
-insert into TicketNo values('B3','S5')
-insert into TicketNo values('B6','S7')
-insert into TicketNo values('B7','S9')
-
-
-
-
-insert into Seats values('B1','S1','Bussiness Class')
-
-
-
-
-insert into Seats values('B4','S5','Ecomony Class')
-
-
-
-
-insert into Seats values('B7','S7','Gen Class')
-
-
-
-
-insert into Seats values('B11','S12','Bussiness Class')
-
-
-
-
-
-
-
-
---An Airline company want to know that which category they are selling the most of the ticket.
-
-
-
-
+-- An Airline company wants to know which category sells the most tickets
 SELECT
-    C.class,
-    Count(*) AS TotalTicketsSold
+    C.Class,
+    COUNT(*) AS TotalTicketsSold
 FROM
     TicketNo AS T
 JOIN
     BoardingPass AS C ON T.Tid = C.Tid
 GROUP BY
-    C.class
+    C.Class
 ORDER BY
     TotalTicketsSold DESC;
 
+-- List of tickets with no boarding pass
+SELECT T.Tid
+FROM TicketNo T
+LEFT JOIN BoardingPass B ON T.Tid = B.Tid
+WHERE B.Tid IS NULL;
 
-
-
---list of tickets having no boarding pass
-SELECT t.Tid
-FROM TicketNo t
-LEFT JOIN BoardingPass b ON t.Tid = b.Tid
-WHERE b.Tid IS NULL;
-
-select name
-from sys.tables
-
-select * from Boardingpass
-select * from TicketNo
-select * from Seats
-
---find the maximum most popular class
---count of seat number
---which passenger name has spend most of the ammount(total). booking and ticket table
-
-select top 1 count(s.Class) as Count, a.Class
-from seats s
-join seats A  on s.Tid=a.Tid
-group by a.Class
-
+-- Find the most popular class by counting seat numbers
+SELECT TOP 1 COUNT(S.Class) AS Count, A.Class
+FROM Seats S
+JOIN Seats A ON S.Tid = A.Tid
+GROUP BY A.Class;

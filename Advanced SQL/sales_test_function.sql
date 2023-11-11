@@ -61,3 +61,17 @@ from dbo.distcount()
 -------------- Final Function call
 
 select * from day_Output()
+
+-- Create a simple scalar function to calculate the square of a number
+CREATE FUNCTION CalculateSquare(@number INT)
+RETURNS INT
+AS
+BEGIN
+    DECLARE @result INT;
+    SET @result = @number * @number;
+    RETURN @result;
+END;
+
+-- Call the CalculateSquare function
+DECLARE @input INT = 5;
+SELECT dbo.CalculateSquare(@input) AS SquareResult;

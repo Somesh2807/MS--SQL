@@ -106,6 +106,10 @@ select * from employees where day(hire_date)>15
 
 --Q5. Write a query to select employee with the second highest salary using self-join.
      
+     with result as(select employee_id,first_name,salary,DENSE_RANK() over (order by salary desc) as n from employees)
+     select * from result where n=2
+     
+
      select e.employee_id,e.first_name,e.salary
      from employees E  join employees F 
      on E.employee_id=F.employee_id
@@ -183,10 +187,8 @@ select * from employees where department_id not  in ( select department_id from 
 
 --Q5)finds the employees who have the (n-1)th highest salary
 
-select * from employees
-where salary = ( select distinct salary from ( select salary, row_number() over (order by  salary asc) as row_num from employees) ranked_employees
- where row_num = (select count(*) - 3 from employees))
-   
+ 
+with result as(select *, DENSE_RANK() over (order by salary desc)as n from employees) select * from result where n=2
    
 
 
@@ -251,5 +253,4 @@ SELECT E.first_name,e.last_name, E.Salary,E.department_id FROM employees E WHERE
     WHERE department_id = E.department_id
 )
 order by E.department_id desc
-
 

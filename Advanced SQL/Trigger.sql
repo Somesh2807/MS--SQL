@@ -270,11 +270,11 @@ declare @category nvarchar(20)--Declatred Variable to store Cateogory of order
 select @category = p.category---Variable source code
 from product p where p.p_id in (select o.product_id from inserted i 
 join order_tbl o on i.product_id = o.product_id
-where p.category = 'pizza'
-)
+where p.category = 'pizza')
 
 if @category = 'pizza'---conditions begin to check whether order is pizza or not ?
 begin   ----IF yes then order as per below conditions
+set nocount on
 update o  set day_date = getdate(),
 total_price = case
 when @category = 'pizza' 
@@ -289,10 +289,12 @@ from order_tbl o
 join product p on o.product_id = p.p_id
 join size s on o.size_id = s.s_id
 where o.o_id in (select i.o_id from inserted i)
+print 'Order Succesfull'
 end
 
 else---else condotion if order is not pizza then no discount on any day (simple calulation price * quantity)
 begin
+set nocount on
 update o
 set
 day_date = getdate(),
@@ -301,6 +303,7 @@ total_price = (o.quantity * p.price_per_unit) * 1.18 -- 18% gst
 from order_tbl o
 join product p on o.product_id = p.p_id
 where o.o_id in (select i.o_id from inserted i)
+print 'Order Succesfull'
 end
 
 end
@@ -311,8 +314,8 @@ group by customer_id
 
 ------TO INSERT DATA IN Customer detail
 
-exec sp_addcustomer  @c_name ='Vineeta Singh' ,@Contact_no = 7983749554,
-@Address = 'vadodara',@Email_ID = 'vineeta.singh@outlook.com'
+exec sp_addcustomer  @c_name ='pradeep Rana' ,@Contact_no = 1001001001,
+@Address = 'vadodara',@Email_ID = 'pradeep.rana@outlook.com'
 
 -----To find customer detail
 select * from customer where contact_no = 8200857566 or email= 'somesh820@outlook.com'
@@ -320,7 +323,7 @@ select * from customer where contact_no = 8200857566 or email= 'somesh820@outloo
 ----To Insert Data Into Order Table
 
 insert into order_tbl (customer_id,product_id,Size_ID,mode_of_order,quantity) 
-values (5001,4,102,'online',50000)
+values (5005,4,102,'online',1)
 
 ---------------------------------------------
 
@@ -328,7 +331,7 @@ values (5001,4,102,'online',50000)
 
 select * from size
 select * from product
-select * from order_tbl
+select * from order_tbl order by day_date desc
 select * from customer
 
 

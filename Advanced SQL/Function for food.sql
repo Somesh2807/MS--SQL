@@ -1,50 +1,48 @@
---database for pantry
-create database PANTRY
+-- Database for pantry
+CREATE DATABASE PANTRY
 
---- ENter in the databse
+-- Enter the database
 USE PANTRY
 
-
-
---create table
-
-create table FOOD(
-ID int,
-Name nvarchar(30),
-START_DATE date,
-END_DATE date
+-- Create table
+CREATE TABLE FOOD (
+    ID INT,
+    Name NVARCHAR(30),
+    START_DATE DATE,
+    END_DATE DATE
 );
 
-select * from FOOD
+-- Select all records from FOOD
+SELECT * FROM FOOD
 
-
-
--- create function to display change in price and necessary details
-alter function PriceChange1(
+-- Create a function to display change in price and necessary details
+ALTER FUNCTION PriceChange1 (
     @priceChangeDate DATE,
-	@old_price money,
+    @old_price MONEY,
     @newPrice MONEY
 )
-returns table
+RETURNS TABLE
 AS
-return 
-( SELECT ID, Name, START_DATE,  END_DATE, @PriceChangeDate as Price_Change_Date,
-((DATEDIFF(day, START_DATE, END_DATE)+1) - (DATEDIFF(week, START_DATE, END_DATE) * 2))*@old_price AS Old_Price,
-(DATEDIFF(day, @PriceChangeDate, END_DATE)+1) - (DATEDIFF(week, @PriceChangeDate, END_DATE) * 2) AS Days_Since_Change,
-@newPrice * ((DATEDIFF(day, @PriceChangeDate, END_DATE)+1) - (DATEDIFF(week, @PriceChangeDate, END_DATE) * 2))  AS New_price_From_Change_Date, 
-(@newPrice-@old_price)/ @newPrice * 100 AS Change_percentage, 
-((@newPrice * ((DATEDIFF(day, @PriceChangeDate, END_DATE)+1) - (DATEDIFF(week, @PriceChangeDate, END_DATE) * 2))) - (((DATEDIFF(day, @priceChangeDate, END_DATE)+1) - (DATEDIFF(week, @priceChangeDate, END_DATE) * 2)))*@old_price) as Diffrence_Amount
-FROM FOOD
-WHERE  @priceChangeDate BETWEEN START_DATE AND END_DATE
+RETURN
+(
+    SELECT
+        ID,
+        Name,
+        START_DATE,
+        END_DATE,
+        @PriceChangeDate AS Price_Change_Date,
+        ((DATEDIFF(DAY, START_DATE, END_DATE) + 1) - (DATEDIFF(WEEK, START_DATE, END_DATE) * 2)) * @old_price AS Old_Price,
+        (DATEDIFF(DAY, @PriceChangeDate, END_DATE) + 1) - (DATEDIFF(WEEK, @PriceChangeDate, END_DATE) * 2) AS Days_Since_Change,
+        @newPrice * ((DATEDIFF(DAY, @PriceChangeDate, END_DATE) + 1) - (DATEDIFF(WEEK, @PriceChangeDate, END_DATE) * 2)) AS New_price_From_Change_Date,
+        (@newPrice - @old_price) / @newPrice * 100 AS Change_percentage,
+        ((@newPrice * ((DATEDIFF(DAY, @PriceChangeDate, END_DATE) + 1) - (DATEDIFF(WEEK, @PriceChangeDate, END_DATE) * 2))) - (((DATEDIFF(DAY, @priceChangeDate, END_DATE) + 1) - (DATEDIFF(WEEK, @PriceChangeDate, END_DATE) * 2))) * @old_price) AS Diffrence_Amount
+    FROM FOOD
+    WHERE @priceChangeDate BETWEEN START_DATE AND END_DATE
 );
 
+-- To run the function, provide parameters [@priceChangeDate], [@old_price], [@newPrice per day]
+SELECT * FROM PriceChange1('2023-10-11', 92, 200)
 
+-- Select all records from FOOD
+SELECT * FROM FOOD
 
---To run function parameters [@price_change_date], [@old_Price] , [@New_Price per day]
-
-select * from PriceChange1('2023-10-11',92,200)
-
-select * from FOOD
-
-
-select * from food where id =1
