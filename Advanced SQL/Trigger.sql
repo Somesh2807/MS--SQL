@@ -266,17 +266,18 @@ begin
 set nocount on
 
 declare @category nvarchar(20)--Declatred Variable to store Cateogory of order
-
 select @category = p.category---Variable source code
-from product p where p.p_id in (select o.product_id from inserted i 
+from product p where p.p_id in 
+(select o.product_id from inserted i 
 join order_tbl o on i.product_id = o.product_id
 where p.category = 'pizza')
 
 if @category = 'pizza'---conditions begin to check whether order is pizza or not ?
 begin   ----IF yes then order as per below conditions
 set nocount on
+
 update o  set day_date = getdate(),
-total_price = case
+total_price = case---Case Start from here
 when @category = 'pizza' 
 and datepart(weekday,o.day_date) in (3, 6) -- tuesday (3) and friday (6)
 and (o.quantity >= 2 )
@@ -284,7 +285,7 @@ and (o.quantity * p.price_per_unit >= 500)
 and o.mode_of_order = 'online'
 then ((o.quantity * p.price_per_unit) + (s.[s_price++] * o.quantity)) * 0.5*1.18  -- 50% discount and 18% gst
 else (o.quantity * p.price_per_unit + s.[s_price++] * o.quantity) * 1.18 -- no discount, just 18% gst
-end
+end ---Case end here
 from order_tbl o
 join product p on o.product_id = p.p_id
 join size s on o.size_id = s.s_id
@@ -323,7 +324,7 @@ select * from customer where contact_no = 8200857566 or email= 'somesh820@outloo
 ----To Insert Data Into Order Table
 
 insert into order_tbl (customer_id,product_id,Size_ID,mode_of_order,quantity) 
-values (5005,4,102,'online',1)
+values (5005,4,102,'online',2)
 
 ---------------------------------------------
 

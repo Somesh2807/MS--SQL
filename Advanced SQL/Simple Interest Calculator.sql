@@ -14,7 +14,7 @@ BEGIN
     SET @totalAmount = @simpleInterest + @principalAmount
 
     DECLARE @EMI_PER_Month INT
-    SET @EMI_PER_Month = @totalAmount / (12 * @Tenure)
+    SET @EMI_PER_Month = @totalAmount / (@Tenure*12)
 
     PRINT 'Loan Details:'
     PRINT CONCAT('Principal amount of loan: ', @principalAmount)
@@ -26,4 +26,4 @@ BEGIN
 END
 
 -- Example: Execute the stored procedure with sample values
-EXEC simple_calculator @principalAmount = 1500000, @ROI = 8.85, @Tenure = 22
+EXEC simple_calculator @principalAmount = 1500000, @ROI = 8.85, @Tenure = 10
