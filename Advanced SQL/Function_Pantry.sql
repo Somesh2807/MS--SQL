@@ -23,12 +23,12 @@ CREATE or alter function PriceChange1(
 RETURNS TABLE
 AS
 RETURN 
-( SELECT ID, Name, START_DATE,  END_DATE, @PriceChangeDate as Price_Change_Date--Price change date,
-((DATEDIFF(day, START_DATE, END_DATE)+1) - (DATEDIFF(week, START_DATE, END_DATE) * 2))*@old_price AS Old_Price---previsous price,
-(DATEDIFF(day, @PriceChangeDate, END_DATE)+1) - (DATEDIFF(week, @PriceChangeDate, END_DATE) * 2) AS Days_Since_Change--No of deficit days,
+( SELECT ID, Name, START_DATE,  END_DATE, @PriceChangeDate as Price_Change_Date,--Price change date
+((DATEDIFF(day, START_DATE, END_DATE)+1) - (DATEDIFF(week, START_DATE, END_DATE) * 2))*@old_price AS Old_Price,---previsous price
+(DATEDIFF(day, @PriceChangeDate, END_DATE)+1) - (DATEDIFF(week, @PriceChangeDate, END_DATE) * 2) AS Days_Since_Change,--No of deficit days
 @newPrice * ((DATEDIFF(day, @PriceChangeDate, END_DATE)+1) -
-(DATEDIFF(week, @PriceChangeDate, END_DATE) * 2))  AS New_price_From_Change_Date--New price chaneg date, 
-(@newPrice-@old_price)/ @newPrice * 100 AS Change_percentage---Price Chaneg Percentage, 
+(DATEDIFF(week, @PriceChangeDate, END_DATE) * 2))  AS New_price_From_Change_Date,--New price chaneg date 
+(@newPrice-@old_price)/ @newPrice * 100 AS Change_percentage,---Price Chaneg Percentage
 ((@newPrice * ((DATEDIFF(day, @PriceChangeDate, END_DATE)+1) - (DATEDIFF(week, @PriceChangeDate, END_DATE) * 2))) -
 (((DATEDIFF(day, @priceChangeDate, END_DATE)+1) -
 (DATEDIFF(week, @priceChangeDate, END_DATE) * 2)))*@old_price) as Diffrence_Amount---Differnce Amount

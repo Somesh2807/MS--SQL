@@ -1,17 +1,18 @@
 -- Create Database cursordb
-CREATE DATABASE cursordb;
+CREATE DATABASE Cursors
 
 -- Switch to the cursordb database
-USE cursordb;
+USE Cursors
 
 -- Create the student table
-CREATE TABLE student (
+CREATE  TABLE student (
     Student_ID INT IDENTITY(1, 1),
     Student_Name NVARCHAR(30),
     SQL_Marks INT,
     Python_Marks INT,
     Azure_Marks INT,
-    Excel_Marks INT
+    Excel_Marks INT,
+	Total_Marks INT
 );
 
 -- Alter the Cursor1 stored procedure

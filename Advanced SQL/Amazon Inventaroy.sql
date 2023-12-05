@@ -37,7 +37,7 @@ ALTER TABLE Sales ADD CONSTRAINT FK_PRODUCT_ID FOREIGN KEY (Product_ID)
 REFERENCES Inventaroy (Product_ID) ON UPDATE CASCADE ON DELETE CASCADE
 
 -- Create a stored procedure 'sales_proc'
-ALTER PROCEDURE sales_proc
+create or ALTER PROCEDURE sales_proc
 (
     @Product_ID        INT,
     @Quantity_Ordered  INT
@@ -98,7 +98,7 @@ SELECT * FROM Inventaroy
 UPDATE Inventaroy SET Stock_Quantity = 1000 + Stock_Quantity WHERE Product_ID = 1
 
 -- Execute the 'sales_proc' stored procedure
-EXEC sales_proc @Product_ID = 1, @Quantity_Ordered = 1500
+EXEC sales_proc @Product_ID = 1, @Quantity_Ordered = 15
 
 -- Get the text of the 'sales_proc' stored procedure
 sp_helptext sales_proc
@@ -116,7 +116,7 @@ UPDATE Sales SET GST_Percentage = CASE
 END
 
 -- Create a function 'GetSalesWithDiscount'
-ALTER FUNCTION dbo.GetSalesWithDiscount()
+create or ALTER FUNCTION dbo.GetSalesWithDiscount()
 RETURNS TABLE
 AS
 RETURN
@@ -139,7 +139,7 @@ SELECT * FROM dbo.GetSalesWithDiscount()
 DROP FUNCTION dbo.getsalesdiscount
 
 -- Create a new 'getSalesDiscount' function
-ALTER FUNCTION dbo.getsalesdiscount
+create or ALTER FUNCTION dbo.getsalesdiscount
 (
     @Order_ID INT
 )
